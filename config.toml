@@ -2,10 +2,12 @@
 # Documentation: https://sourcethemes.com/academic/
 #
 # This file is formatted using TOML syntax - learn more at https://learnxinyminutes.com/docs/toml/
-# Each configuration section is defined by a name in square brackets (e.g. `[outputs]`).
+# Each configuration section is defined by a name in square brackets (e.g. `[outputs]`)
 
 # Title of your site
 title = "HH.IO"
+
+# filesystempath to write to
 
 # The URL of your site.
 # End your URL with a `/` trailing slash, e.g. `https://example.com/`.
@@ -25,6 +27,9 @@ theme = "academic"
 
 # Get last modified date for content from Git?
 enableGitInfo = false
+
+
+
 
 # Default language to use (if you setup multilingual support)
 defaultContentLanguage = "en"
