@@ -35,6 +35,7 @@ education:
     year: 2015
   - course: Staatl. gepr. informations- und kommunikationstechnischer Assistent
     institution: WS$^2$
+    year: 2010
 
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
@@ -56,6 +57,7 @@ social:
 - icon: github
   icon_pack: fab
   link: https://github.com/mrhenhan
+  
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
 # - icon: cv
@@ -74,4 +76,4 @@ email: "henrik.hain@all-in-data.de"
 
 Henrik is a data scientist and (data) engineer at All.In Data GmbH located in beautiful Mannheim, Germany. His work and research interests include (deep) reinforcement learning, machine learning, software engineering, and natural language processing where he successfully applied his expertise in real-world and research projects in finance, EPC project management, and large online retail. 
 
-He has a preference for elegantly designed, efficient and minimal systems and does not take a linking into burying regular problems with overengineered or oversized solutions, which is sometimes the reason for being admonished by his boss Florian Horn for getting lost in details. Actually Henrik has nothing against it.
+He has a preference for elegantly designed, efficient and minimal systems and does not take a liking in burying regular problems with overengineered or oversized solutions, which is sometimes the reason for being admonished by his boss Florian for getting lost in details. Actually Henrik has nothing against it.

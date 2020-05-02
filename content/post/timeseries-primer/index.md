@@ -5,7 +5,11 @@ summary: A very quick primer for facilitating understanding and handling of time
 authors:
 - mrhenhan
 tags:
-- Academic
+- Time Series
+- Python
+- Analytics
+- LOESS STL
+- STL
 categories:
 - Analytics
 date: "2019-11-27"
@@ -19,6 +23,9 @@ draft: false
 #   Otherwise, set `projects = []`.
 projects: []
 ---
+{{% alert note %}}
+[All.In Data](https://www.all-in-data.de/de/kuenstliche-intelligenz/time-series-a-primer/) has republished this article on their blog March the 18th. Thank you :smile:
+{{% /alert %}}
 
 **Understand the core nature of a time series and how pandas helps you with manipulating and analyzing it!**
 
@@ -38,10 +45,13 @@ Mathematically a time series is usually defined as $X=\{X_1,X_2,...\}$ or $Y=\{Y
 
 To get a first feeling for a TS it is best to visualize it in a meaningful way. Luckily visualizing a TS is very easy to accomplish with the help of Jupyter and Pandas. The following Python code plots a TS representing the minimum temperature for each day in Melbourne, Australia over the course of 10 years.
 
+{{< icon name="python" pack="fab" >}}
+```python
 	import statsmodels.api as sm
 
 	res = sm.tsa.seasonal_decompose(df['Melbourne Min. Temp.'], model='additive', freq=365)
 	resplot = res.plot()
+```
 
 {{< figure src="./melbourne_min.png" title="Daily Minimum Temperature in Australia, Melbourne 1981 - 1990">}}
 
@@ -56,10 +66,13 @@ For analysis it is useful to isolate patterns in time series. A TS itself could 
 
 A useful tool to capture those properties is the Loess seasonal decompose from statsmodels, which decomposes a time series into its trend, seasonal, and irregular (residual) components. The following Python code will create a seasonal Loess decomposition plot of the Melbourne minimum temperature dataset.
 
+{{< icon name="python" pack="fab" >}}
+```python
 	import statsmodels.api as sm
 
 	res = sm.tsa.seasonal_decompose(df['Melbourne Min. Temp.'], model='additive', freq=365)
 	resplot = res.plot()
+```
 
 Seasonal decomposition plot of Melbourne temperature data Melbourne Seasonal Decomposition Plot. The plot itself contains the observed time series, the trend component, the seasonal component and the irregular component of the analysed time series. In this case we used the additive model, as negative or zero values are not supported in case of the multiplicative model.
 
@@ -72,11 +85,16 @@ This was a very quick primer on time series and seasonal decomposition in Python
 
 **Hyperlinks & References**
 
-    - [Python](https://www.python.org/)
-    - [Time Series Primer Jupyter Notebook](https://mybinder.org/v2/gh/hhain/time-series/master?filepath=01%20Time%20Series%20-%20A%20Primer.ipynb)
-    - [Pandas](https://pandas.pydata.org/)
-    - [Statsmodels](https://www.statsmodels.org/stable/index.html)
-    - [Jupyter](https://jupyter.org/)
-    - [Github](https://github.com/)
-    - [STL: Loess Decomposition Paper](https://www.wessa.net/download/stl.pdf)
+[Python](https://www.python.org/)
 
+[Time Series Primer Jupyter Notebook](https://mybinder.org/v2/gh/hhain/time-series/master?filepath=01%20Time%20Series%20-%20A%20Primer.ipynb)
+
+[Pandas](https://pandas.pydata.org/)
+
+[Statsmodels](https://www.statsmodels.org/stable/index.html)
+
+[Jupyter](https://jupyter.org/)
+
+[Github](https://github.com/)
+
+[STL: Loess Decomposition Paper](https://www.wessa.net/download/stl.pdf)
