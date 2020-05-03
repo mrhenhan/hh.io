@@ -1,7 +1,7 @@
 ---
 title: Terms
-date: "2018-06-28T00:00:00+01:00"
-draft: true
+date: "2020-05-02T00:00:00+01:00"
+draft: false
 share: false
 commentable: false
 editable: false
@@ -11,7 +11,7 @@ header:
   caption: ""
   image: ""
 ---
-*[German law demands this (§ 5 TMG)]*
+*[§ 5 TMG - German law demands this]*
 
 HH.IO (Henrik Hain)
 

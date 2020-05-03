@@ -73,7 +73,6 @@ email: "henrik.hain@all-in-data.de"
 #- Researchers
 #- Visitors
 ---
-
-Henrik is a data scientist and (data) engineer at All.In Data GmbH located in beautiful Mannheim, Germany. His work and research interests include (deep) reinforcement learning, machine learning, software engineering, and natural language processing where he successfully applied his expertise in real-world and research projects in finance, EPC project management, and large online retail. 
+Henrik is a data scientist and (data) engineer at All.In Data GmbH located in beautiful Mannheim, Germany. His work and research interests include (deep) reinforcement learning, machine learning, software engineering, and natural language processing where he successfully applied his expertise in academic research as well as in real-world business projects in finance, EPC project management, and large online retail. 
 
 He has a preference for elegantly designed, efficient and minimal systems and does not take a liking in burying regular problems with overengineered or oversized solutions, which is sometimes the reason for being admonished by his boss Florian for getting lost in details. Actually Henrik has nothing against it.

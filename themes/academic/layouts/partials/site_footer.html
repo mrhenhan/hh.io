@@ -1,6 +1,10 @@
 <footer class="site-footer">
-  {{ if or (site.GetPage "terms.md") (site.GetPage "privacy.md") }}
+  {{ if or (site.GetPage "terms.md") (site.GetPage "privacy.md") (site.GetPage "license.md") }}
   <p class="powered-by">
+    {{ with site.GetPage "license.md" }}
+      {{ printf "<a href=\"%s\">%s</a>" .RelPermalink .Title | safeHTML }}
+      &middot;
+    {{ end }}
     {{ with site.GetPage "privacy.md" }}
       {{ printf "<a href=\"%s\">%s</a>" .RelPermalink .Title | safeHTML }}
     {{ end }}
@@ -12,7 +16,7 @@
   {{ end }}
 
   <p class="powered-by">
-    {{ with site.Copyright }} {{ replace . "{year}" now.Year | markdownify}} &middot; Henrik Hain {{ end }}
+ HH.IO {{ with site.Copyright }} {{ replace . "{year}" now.Year | markdownify}} &middot; Henrik Hain {{ end }}
 
 <!--    Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
