@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Current Advancements in Reinforcement Learning</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Henrik Hain Supervisor: Dipl.-Ing. D. Zimmermann" />
+    <meta name="date" content="2020-05-06" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/rladies-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="Recent-Advancements-in-Deep-Reinforcement-Learning.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle, hide-logo
+
+
+
+&lt;div class="my-logo-left"&gt;&lt;/div&gt;
+&lt;div class="my-logo-right"&gt;&lt;/div&gt;
+
+# Current Advancements in Deep Reinforcement Learning
+### Daten in software-intensiven technischen Systemen - Modellierung - Analyse - Schutz
+#### Henrik Hain&lt;br&gt;Supervisor: Dipl.-Ing. D. Zimmermann
+#### Institute for Program Structures and Data Organisation
+#### 2020-05-06
+
+---
+# Table of Contents
+
+.left-column[
+### Contents
+]
+
+.right-column[
+### 1. Recent Breakthroughs
+
+### 2. Reinforcement Learning &amp; Deep Learning
+
+### 3 .Deep Reinforcement Learning
+
+### 4. Selected Advancements
+
+### 5. Conclusion and Outlook
+] 
+
+&lt;div class="my-footer"&gt;&lt;span&gt;2020-05-06 - Henrik Hain - Current Advancements in Deep Reinforcement Learning&lt;/span&gt;&lt;/div&gt;
+
+---
+class: center, middle, inverse
+
+# Recent Breakthroughs
+
+--
+
+## "AI equals reinforcement learning plus deep learning." - [D. Silver]
+
+--
+
+## "Deep reinforcement learning is poised to revolutionalize the field of artificial intelligence [...]." - [K. Arulkuraman]
+
+---
+# Recent Breakthrough
+
+.left-column[
+### 2019 AlphaStar
+]
+
+.right-column[
+.right[
+&lt;img src="./img/alpha_star_video.gif" width="98%"/&gt;&lt;br&gt;
+Image: &lt;a href="https://deepmind.com/blog/article/alphastar-mastering-real-time-strategy-game-starcraft-ii"&gt;Google DeepMind&lt;/a&gt;]
+]
+
+&lt;div class="my-footer"&gt;&lt;span&gt;2020-05-06 - Henrik Hain - Current Advancements in Deep Reinforcement Learning&lt;/span&gt;&lt;/div&gt;
+
+???
+- Plays the RTS StarCraft II on raw visual input
+- Problem Dimensions
+  - Imperfect Information Game
+  - Large Action Space
+  - Involves Long Term Planning
+- Ranks Above 99.8% of all players
+- Uses Combinations of RL, Heuristical Search, ...
+
+---
+# Recent Breakthrough
+
+.left-column[
+### 2019 AlphaStar
+
+### 2018 Rubik's Cube
+]
+
+.right-column[
+.right[
+&lt;img src="./img/rubics-cube.png" width="100%" /&gt;&lt;br&gt;Image: &lt;a href="https://openai.com/blog/solving-rubiks-cube/"&gt;OpenAI&lt;/a&gt;
+]
+]
+
+&lt;div class="my-footer"&gt;&lt;span&gt;2020-05-06 - Henrik Hain - Current Advancements in Deep Reinforcement Learning&lt;/span&gt;&lt;/div&gt;
+
+???
+- Plays Chess, Shogi and go at expert program level
+- True RL successor to AlphaGo
+- Problem Dimensions
+  - Perfect Information Game
+  - Search Space Sice
+  - Position Evaluation
+
+---
+# Recent Breakthrough
+
+.left-column[
+### 2019 AlphaStar
+
+### 2018 Rubik's Cube
+
+### 2017 AlphaZero
+]
+
+.right-column[
+
+.right[
+&lt;img src="./img/AlphaZero.gif" width="100%" /&gt;&lt;br&gt;Image: &lt;a href="https://deepmind.com/blog/article/alphazero-shedding-new-light-grand-games-chess-shogi-and-go"&gt;Google DeepMind&lt;/a&gt;
+]
+]
+
+&lt;div class="my-footer"&gt;&lt;span&gt;2020-05-06 - Henrik Hain - Current Advancements in Deep Reinforcement Learning&lt;/span&gt;&lt;/div&gt;
+
+---
+class: center, middle, inverse
+
+# Reinforcement Learning &amp; Deep Learning
+
+---
+# Reinforcement Learning
+
+.left-column[
+### Overview
+]
+
+.right-column[
+An Agent interacts with an environment `\(E\)` in discrete timesteps. At each timestep `\(t\)` the agent receives an observation `\(s_t\)`, takes an action `\(a_t\)` and receives a scalar reward `\(r_t\)`.
+.right[
+&lt;img src="./img/rl_overview.svg" width="90%" /&gt;
+]
+Formalized as Markov descision processes (MDP).
+]
+
+&lt;div class="my-footer"&gt;&lt;span&gt;2020-05-06 - Henrik Hain - Current Advancements in Deep Reinforcement Learning&lt;/span&gt;&lt;/div&gt;
+
+---
+# Reinforcement Learning
+
+.left-column[
+### Overview
+
+### Policy
+
+]
+
+.right-column[
+A policy defines an agents behavior at a given time.
+.right[
+&lt;img src="./img/policy.png" width="80%" /&gt;
+]
+A policy `\(\pi\)` maps states to a probability distribution over actions `\(\pi:S \rightarrow P(A)\)`.
+]
+
+&lt;div class="my-footer"&gt;&lt;span&gt;2020-05-06 - Henrik Hain - Current Advancements in Deep Reinforcement Learning&lt;/span&gt;&lt;/div&gt;
+
+---
+# Reinforcement Learning
+
+.left-column[
+### Overview
+
+### Policy
+
+### Reward &amp; Value
+]
+
+.right-column[
+The reward defines the goal of a reinforcment learning problem. On each time step, the environment emmits a scalar reward value.
+.right[
+&lt;img src="./img/student_reward.png" width="40%" /&gt;
+&lt;img src="./img/student_mdp.png" width="40%" /&gt;
+&lt;br&gt;Images: &lt;a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=13&amp;ved=2ahUKEwjIsKPe7ujoAhVM26QKHQG2BhwQFjAMegQIBRAB&amp;url=https%3A%2F%2Fwww.davidsilver.uk%2Fwp-content%2Fuploads%2F2020%2F03%2FMDP.pdf&amp;usg=AOvVaw2G8xS6pXLns1mo_vKVQmE3"&gt;David Silver&lt;/a&gt;
+]
+A value function specifies long-term desirabilities. The state value is defined as the sum of discounted expected future rewards `\(R_t=\sum_{i=t}^{T}\gamma^{(i-t)}r(s_i,a_i)\)`.
+]
+
+&lt;div class="my-footer"&gt;&lt;span&gt;2020-05-06 - Henrik Hain - Current Advancements in Deep Reinforcement Learning&lt;/span&gt;&lt;/div&gt;
+
+---
+# Reinforcement Learning
+
+.left-column[
+### Overview
+
+### Policy
+
+### Reward &amp; Value
+
+### Exploration
+
+]
+
+.right-column[
+The problem of balancing exploration and exploitation can be formalized using so-called multi-armed bandit problems.
+&lt;br&gt;
+&lt;img src="./img/5-armed Bandit.png" width="100%" /&gt;
+&lt;br&gt;
+Multi-armed bandits are a reduced, non-associative case of the 'complete' reinforcement learning problem.
+]
+
+&lt;div class="my-footer"&gt;&lt;span&gt;2020-05-06 - Henrik Hain - Current Advancements in Deep Reinforcement Learning&lt;/span&gt;&lt;/div&gt;
+
+---
+# Reinforcement Learning
+
+.left-column[
+### Overview
+
+### Policy
+
+### Reward &amp; Value
+
+### Exploration
+]
+
+.right-column[
+Balancing exploration and exploitation using an `\(\epsilon\)`-greedy action selection.
+.right[
+&lt;img src="./img/bandit_reward.png" width="95%" /&gt;
+]
+`\(\epsilon\)`-greedy: Select greedy action with probability `\(1-\epsilon\)`, else select at random.
+]
+
+&lt;div class="my-footer"&gt;&lt;span&gt;2020-05-06 - Henrik Hain - Current Advancements in Deep Reinforcement Learning&lt;/span&gt;&lt;/div&gt;
+
+---
+# Reinforcement Learning
+
+.left-column[
+### Overview
+
+### Policy
+
+### Reward &amp; Value
+
+### Exploration
+
+### [Model]
+]
+
+.right-column[
+An [optional] reinforcement learning model mimics environmental dynamics, enabling usage of optimal control and planning methods.
+.right[
+&lt;img src="./img/rl_model.png" width="55%" /&gt;
+&lt;br&gt;Image: &lt;a href="https://arxiv.org/abs/1901.03737"&gt;Nathan Lambert&lt;/a&gt;
+]
+
+]
+
+&lt;div class="my-footer"&gt;&lt;span&gt;2020-05-06 - Henrik Hain - Current Advancements in Deep Reinforcement Learning&lt;/span&gt;&lt;/div&gt;
+
+---
+# Deep Learning
+
+.left-column[
+### Why?
+
+]
+
+.right-column[
+Deep neural networks (DNN) excel in automatic hierarchical representation learning as well as function approximation, usually outperforming competing approaches.
+.right[
+&lt;img src="./img/dl_why.png" width="85%" /&gt;&lt;br&gt;Image: &lt;a href="https://towardsdatascience.com/how-managers-should-prepare-for-deep-learning-new-values-f29a98b70bd8"&gt;Richard Hackathorn&lt;/a&gt;
+]
+]
+
+&lt;div class="my-footer"&gt;&lt;span&gt;2020-05-06 - Henrik Hain - Current Advancements in Deep Reinforcement Learning&lt;/span&gt;&lt;/div&gt;
+
+---
+# Deep Learning
+
+.left-column[
+### Why?
+
+### Overview
+
+]
+
+.right-column[
+Apart from established, application domain specific standard architecture patterns, neural network architectures provide a high degree of flexibility.
+.right[
+&lt;img src="./img/cmplx_deepnetwork.png" width="90%" /&gt;&lt;br&gt;Image: &lt;a href="https://www.researchgate.net/publication/332219159_Quantum_Machine_Learning_for_6G_Communication_Networks_State-of-the-Art_and_Vision_for_the_Future"&gt;Junaid Nawaz et al.&lt;/a&gt;
+]
+
+]
+
+.left[
+
+
+
+]
+
+&lt;div class="my-footer"&gt;&lt;span&gt;2020-05-06 - Henrik Hain - Current Advancements in Deep Reinforcement Learning&lt;/span&gt;&lt;/div&gt;
+
+---
+# Deep Learning
+
+.left-column[
+### Why?
+
+### Overview
+
+### Elements
+
+]
+
+.right-column[
+Deep neural networks are neural networks consisting of multiple hidden layers, usually used for learning feature hierarchies.
+.right[
+    &lt;img src="./img/shallow_network.png" width="49%" /&gt;
+    &lt;img src="./img/deep_network_features.png" width="49%" /&gt;
+&lt;br&gt;Image: &lt;a href="https://www.rsipvision.com/exploring-deep-learning/"&gt;www.rsipvision.com&lt;/a&gt;
+
+]
+
+]
+
+&lt;div class="my-footer"&gt;&lt;span&gt;2020-05-06 - Henrik Hain - Current Advancements in Deep Reinforcement Learning&lt;/span&gt;&lt;/div&gt;
+
+---
+# Deep Learning
+
+.left-column[
+### Why?
+
+### Overview
+
+### Elements
+
+### Example
+
+]
+
+.right-column[
+Deep Q-Network (DQN) processing schematic and network attention saliency map of a trained DQN playing Space Invaders on an Atari 2600. 
+.right[
+&lt;img src="./img/dl_cnn_dqn.jpg" width="68%" /&gt;
+&lt;img src="./img/saliencymap_atari.png" width="30%" /&gt;
+&lt;br&gt;Images: &lt;a href="https://www.nature.com/articles/nature14236"&gt;Mnih et al.&lt;/a&gt;
+]
+]
+
+&lt;div class="my-footer"&gt;&lt;span&gt;2020-05-06 - Henrik Hain - Current Advancements in Deep Reinforcement Learning&lt;/span&gt;&lt;/div&gt;
+
+---
+class: center, middle, inverse
+
+# Deep Reinforcement Learning
+
+## Areas, Research, and Applications
+
+---
+# Deep Reinforcement Learning
+
+.left-column[
+### Overview
+
+]
+
+.right-column[
+OpenAI key research areas.
+.right[
+&lt;img src="./img/openai_mainareas.svg" width="95%" /&gt;
+]
+]
+
+&lt;div class="my-footer"&gt;&lt;span&gt;2020-05-06 - Henrik Hain - Current Advancements in Deep Reinforcement Learning&lt;/span&gt;&lt;/div&gt;
+
+---
+# Deep Reinforcement Learning
+
+.left-column[
+### Overview
+
+### Areas
+
+]
+
+.right-column[
+OpenAI key research areas citation counts.
+.right[
+&lt;img src="./img/openai_mainarea_citations.svg" width="95%" /&gt;
+]
+]
+
+&lt;div class="my-footer"&gt;&lt;span&gt;2020-05-06 - Henrik Hain - Current Advancements in Deep Reinforcement Learning&lt;/span&gt;&lt;/div&gt;
+
+---
+# Deep Reinforcement Learning
+
+.left-column[
+### Overview
+
+### Areas
+
+### Research
+
+]
+
+.right-column[
+Top 5 most influential research papers according to citation counts.
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;style type="text/css"&gt;
+.tg  {border-collapse:collapse;border-spacing:0;border-color:#9ABAD9;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-top-width:1px;border-bottom-width:1px;border-color:#9ABAD9;color:#444;background-color:#EBF5FF;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-top-width:1px;border-bottom-width:1px;border-color:#9ABAD9;color:#fff;background-color:#409cff;}
+.tg .tg-phtq{background-color:#D2E4FC;border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-f48y{font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif !important;;border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+&lt;/style&gt;
+&lt;table class="tg"&gt;
+  &lt;tr&gt;
+    &lt;th class="tg-f48y"&gt;Year&lt;/th&gt;
+    &lt;th class="tg-0pky"&gt;Cited By&lt;/th&gt;
+    &lt;th class="tg-0pky"&gt;Title&lt;/th&gt;
+    &lt;th class="tg-0pky"&gt;Author&lt;/th&gt;
+    &lt;th class="tg-0pky"&gt;Area&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="tg-phtq"&gt;2013&lt;/td&gt;
+    &lt;td class="tg-phtq"&gt;3401&lt;/td&gt;
+    &lt;td class="tg-phtq"&gt;Playing Atari with Deep Reinforcement Learning&lt;/td&gt;
+    &lt;td class="tg-phtq"&gt;Mnih et al.&lt;/td&gt;
+    &lt;td class="tg-phtq"&gt;Model-Free/Deep Q&lt;br&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="tg-0pky"&gt;2015&lt;/td&gt;
+    &lt;td class="tg-0pky"&gt;2707&lt;/td&gt;
+    &lt;td class="tg-0pky"&gt;Continuous Control With Deep Reinforcement Learning&lt;/td&gt;
+    &lt;td class="tg-0pky"&gt;Lillicrap et al.&lt;/td&gt;
+    &lt;td class="tg-0pky"&gt;Model-Free/DPG&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="tg-phtq"&gt;2016&lt;br&gt;&lt;/td&gt;
+    &lt;td class="tg-phtq"&gt;2634&lt;/td&gt;
+    &lt;td class="tg-phtq"&gt;Asynchronous Methods for Deep Reinforcement Learning&lt;/td&gt;
+    &lt;td class="tg-phtq"&gt;Mnih et al.&lt;/td&gt;
+    &lt;td class="tg-phtq"&gt;Model-Free/PG&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="tg-0pky"&gt;2015&lt;br&gt;&lt;/td&gt;
+    &lt;td class="tg-0pky"&gt;1788&lt;/td&gt;
+    &lt;td class="tg-0pky"&gt;Trust Region Policy Optimization Algorithms&lt;/td&gt;
+    &lt;td class="tg-0pky"&gt;Schulman et al.&lt;/td&gt;
+    &lt;td class="tg-0pky"&gt;Model-Free/PG&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="tg-phtq"&gt;2015&lt;/td&gt;
+    &lt;td class="tg-phtq"&gt;1599&lt;/td&gt;
+    &lt;td class="tg-phtq"&gt;Deep Reinforcement Learning with Double Q-learning&lt;/td&gt;
+    &lt;td class="tg-phtq"&gt;Hasselt et al.&lt;/td&gt;
+    &lt;td class="tg-phtq"&gt;Model-Free/Deep Q&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+]
+
+&lt;div class="my-footer"&gt;&lt;span&gt;2020-05-06 - Henrik Hain - Current Advancements in Deep Reinforcement Learning&lt;/span&gt;&lt;/div&gt;
+
+---
+class: center, middle, inverse
+
+# Selected Advancements
+
+---
+# Selected Advancements
+
+.left-column[
+### Double Q-learning
+]
+
+.right-column[
+Deep Reinforcement Learning with Double Q-learning
+.pull-left[
+- Both standard Q-learning and DQN use the same operator for action selection and evaluation.
+- Prone to overestimation action values
+- splitting argmax operator in action selection and evaluation
+- Reduces overestimation of expected values
+]
+.pull-right[
+&lt;img src="./img/dqn_overestimation.png" width="100%" /&gt;&lt;br&gt;Image: &lt;a href="https://arxiv.org/abs/1509.06461"&gt;Hasselt et al.&lt;/a&gt;
+]
+]
+
+&lt;div class="my-footer"&gt;&lt;span&gt;2020-05-06 - Henrik Hain - Current Advancements in Deep Reinforcement Learning&lt;/span&gt;&lt;/div&gt;
+
+---
+# Selected Advancements
+
+.left-column[
+### Double Q-learning
+
+### Continuous Control
+]
+
+.right-column[
+Continuous Control With Deep Reinforcement Learning
+.pull-left[
+- Many tasks have continuous, high dimensional action spaces
+- Discretizing action space intractable with DQN
+- Adapts DQN for continuous control tasks
+
+]
+.pull-right[
+&lt;img src="./img/cc_performance.png" width="100%" /&gt;&lt;br&gt;Images: &lt;a href="https://arxiv.org/abs/1509.02971"&gt;Lillicrap et al.&lt;/a&gt;
+]
+]
+
+
+&lt;div class="my-footer"&gt;&lt;span&gt;2020-05-06 - Henrik Hain - Current Advancements in Deep Reinforcement Learning&lt;/span&gt;&lt;/div&gt;
+
+---
+# Selected Advancements
+
+.left-column[
+### Double Q-learning
+
+### Continuous Control
+
+### Asynchronous Methods
+]
+
+.right-column[
+.right[
+&lt;img src="./img/async_speed.png" width="100%" /&gt;&lt;br&gt;&lt;br&gt;&lt;img src="./img/async_stability_a3c.png" width="100%" /&gt;&lt;br&gt;Images: &lt;a href="https://arxiv.org/abs/1509.06461"&gt;Mnih et al.&lt;/a&gt;
+]
+]
+
+&lt;div class="my-footer"&gt;&lt;span&gt;2020-05-06 - Henrik Hain - Current Advancements in Deep Reinforcement Learning&lt;/span&gt;&lt;/div&gt;
+
+---
+# Selected Advancements
+
+.left-column[
+### Double Q-learning
+
+### Continuous Control
+
+### Asynchronous Methods
+
+### Proximal Policy Optimization
+]
+
+.right-column[
+.right[
+&lt;img src="./img/ppo_algorithms.png" width="100%" /&gt;&lt;br&gt;Image: &lt;a href="https://arxiv.org/abs/1707.06347"&gt;Schulman et al.&lt;/a&gt;
+]
+]
+
+&lt;div class="my-footer"&gt;&lt;span&gt;2020-05-06 - Henrik Hain - Current Advancements in Deep Reinforcement Learning&lt;/span&gt;&lt;/div&gt;
+
+---
+# Selected Advancements
+
+.left-column[
+### Double Q-learning
+
+### Continuous Control
+
+### Asynchronous Methods
+
+### Proximal Policy Optimization
+
+### Meta-Learning
+]
+
+.right-column[
+.right[
+&lt;img src="./img/maml.png" width="80%" /&gt;&lt;br&gt;Image: &lt;a href="https://bair.berkeley.edu/blog/2017/07/18/learning-to-learn/"&gt;Berkeley&lt;/a&gt;
+]
+]
+
+&lt;div class="my-footer"&gt;&lt;span&gt;2020-05-06 - Henrik Hain - Current Advancements in Deep Reinforcement Learning&lt;/span&gt;&lt;/div&gt;
+
+---
+# Conclusion and Outlook
+
+.left-column[
+
+]
+
+.right-column[
+
+]
+
+&lt;div class="my-footer"&gt;&lt;span&gt;2020-05-06 - Henrik Hain - Current Advancements in Deep Reinforcement Learning&lt;/span&gt;&lt;/div&gt;
+
+---
+class: center, middle
+# Thanks!
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+<style>
+.logo {
+  background-image: url(img/kit_logo.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 130px;
+  height: 60px;
+  z-index: 0;
+}
+</style>
+
+<script>
+document
+  .querySelectorAll(
+    '.remark-slide-content' +
+    ':not(.title-slide)' +
+    // add additional classes to exclude here, e.g.
+    // ':not(.inverse)' +
+    ':not(.hide-logo)'
+  )
+  .forEach(el => {
+    el.innerHTML += '<div class="logo"></div>';
+  });
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

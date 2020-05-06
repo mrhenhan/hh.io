@@ -1,0 +1,59 @@
+.my-logo-left {
+content: "";
+    position: absolute;
+    top: 15px;
+    left:   40px;
+    height: 80px;
+    width: 173px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(img/kit_logo.svg);
+}
+
+.my-logo-right {
+content: "";
+    position: absolute;
+    top: -17px;
+    right:  -160px;
+    height: 160px;
+    width: 320px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(img/sdq_logo.svg);
+}
+
+.center .remark-slide-number {
+  display: none;
+}
+
+.video-container {
+position: relative;
+padding-bottom: 56.25%;
+padding-top: 30px; height: 0; overflow: hidden;
+}
+ 
+.video-container iframe,
+.video-container object,
+.video-container embed {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+
+div.my-footer {
+    background-color: #272822;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 20px;
+    width: 100%;
+}
+div.my-footer span {
+    font-size: 10pt;
+    color: #F7F8FA;
+    position: absolute;
+    left: 15px;
+    bottom: 2px;
+}

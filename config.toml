@@ -12,7 +12,7 @@ title = "HH.IO"
 # The URL of your site.
 # End your URL with a `/` trailing slash, e.g. `https://example.com/`.
 # url is handled by nginx and dns
-baseurl = "/"
+baseurl = "https://henrikhain.io"
 
 # Enter a copyright notice to display in the site footer.
 # To display a copyright symbol, type `&copy;`. For current year, type `{year}`.
@@ -71,7 +71,7 @@ ignoreFiles = ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "
 
 [imaging]
   resampleFilter = "lanczos"
-  quality = 90
+  quality = 95
   anchor = "smart"  # Anchor for cropping. Options include Smart and Center.
 
 # Taxonomies.

@@ -1,0 +1,42 @@
+<footer class="site-footer">
+  {{ if or (site.GetPage "license.md") }}
+  <p class="powered-by">
+    {{ with site.GetPage "license.md" }}
+      {{ printf "<a href=\"%s\">%s</a>" .RelPermalink .Title | safeHTML }}
+      <br>
+      <i class="fab fa-creative-commons fa-2x"></i>
+      <i class="fab fa-creative-commons-by fa-2x"></i>
+      <i class="fab fa-creative-commons-sa fa-2x"></i>
+    {{ end }}
+  </p>
+  {{ end }}
+
+  {{ if or (site.GetPage "terms.md") (site.GetPage "privacy.md") }}
+  <p class="powered-by">
+    HH.IO {{ with site.Copyright }} {{ replace . "{year}" now.Year | markdownify}} &middot; Henrik Hain &middot;
+    {{ with site.GetPage "privacy.md" }}
+      {{ printf "<a href=\"%s\">%s</a>" .RelPermalink .Title | safeHTML }}
+    {{ end }}
+      {{ with site.GetPage "terms.md" }}
+        {{ if site.GetPage "privacy.md" }} &middot;
+        {{ end }}
+          {{ printf "<a href=\"%s\">%s</a>" .RelPermalink .Title | safeHTML }}
+        {{ end }}
+        &middot; Made with &hearts;, <i class="fas fa-code-branch"></i>, <a href="https://cran.r-project.org/" target="_blank" rel="noopener"><i class="fab fa-r-project"></i> </a> <a href="https://github.com/rstudio/blogdown" target="_blank" rel="noopener">blogdown</a> on a <a href="https://www.raspberrypi.org/products/raspberry-pi-4-model-b/" target="_blank" rel="noopener"><i class="fab fa-raspberry-pi"></i></a> and powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+      {{ end }}
+    {{ end }}
+
+
+    {{ if not (in (slice "docs" "updates") .Type) }}
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    {{ end }}
+  </p>
+</footer>

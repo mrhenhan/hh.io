@@ -18,12 +18,14 @@ organizations:
   url: "https://www.all-in-data.de/en/"
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include (deep) reinforcement learning, event detection, and software engineering.
+bio: My (research) interests evolve all around the theoretical and practical software engineering aspects of (self-) learning systems and algorithms, especially (deep) reinforcement learning, spatio-temporal event detection, and computer vision approaches.
 
 interests:
-- Reinforcement Learning
-- Event Detection
-- Software Engineering
+- Data science
+- (Deep) reinforcement learning
+- Predictive modeling & machine learning
+- Cognitive systems, anthropomatics, and computer vision
+- (Empirical) software engineering
 
 education:
   courses: 
@@ -42,21 +44,25 @@ education:
 #   For an email link, use "fas" icon pack, "envelope" icon, and a link in the
 #   form "mailto:your-email@example.com" or "#contact" for contact widget.
 social:
-- icon: envelope
-  icon_pack: fas
-  link: '#contact'  # For a direct email link, use "mailto:test@example.org".
-- icon: linkedin
+- icon: telegram
   icon_pack: fab
-  link: https://www.linkedin.com/in/henrikhain/
+  link: https://t.me/MrHenHan
 - icon: twitter
   icon_pack: fab
   link: https://twitter.com/mrhenhan
-- icon: google-scholar
-  icon_pack: ai
-  link: https://scholar.google.co.uk/citations?hl=de&pli=1&user=CkzOvy8AAAAJ
 - icon: github
   icon_pack: fab
   link: https://github.com/mrhenhan
+- icon: linkedin
+  icon_pack: fab
+  link: https://www.linkedin.com/in/henrikhain/
+- icon: keybase
+  icon_pack: fab
+  link: https://keybase.io/mrhenhan#_
+- icon: google-scholar
+  icon_pack: ai
+  link: https://scholar.google.co.uk/citations?hl=de&pli=1&user=CkzOvy8AAAAJ
+  
   
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
