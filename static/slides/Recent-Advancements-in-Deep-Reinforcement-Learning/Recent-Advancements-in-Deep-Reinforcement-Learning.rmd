@@ -44,7 +44,7 @@ options(htmltools.dir.version = FALSE)
 
 ### 2. Reinforcement Learning & Deep Learning
 
-### 3 .Deep Reinforcement Learning
+### 3. Deep Reinforcement Learning
 
 ### 4. Selected Advancements
 
@@ -148,11 +148,11 @@ class: center, middle, inverse
 ]
 
 .right-column[
-An Agent interacts with an environment $E$ in discrete timesteps. At each timestep $t$ the agent receives an observation $s_t$, takes an action $a_t$ and receives a scalar reward $r_t$.
+Perception-action loop discrete timestep interaction
 .right[
 <img src="./img/rl_overview.svg" width="90%" />
 ]
-Formalized as Markov descision processes (MDP).
+Typically formalized as Markov descision processes (MPD's)
 ]
 
 <div class="my-footer"><span>`r Sys.Date()` - Henrik Hain - Current Advancements in Deep Reinforcement Learning</span></div>
@@ -168,11 +168,11 @@ Formalized as Markov descision processes (MDP).
 ]
 
 .right-column[
-A policy defines an agents behavior at a given time.
+A policy defines an agents behavior at a given time
 .right[
 <img src="./img/policy.png" width="80%" />
 ]
-A policy $\pi$ maps states to a probability distribution over actions $\pi:S \rightarrow P(A)$.
+Policy $\pi$ maps states to a probability distribution over actions $\pi:S \rightarrow P(A)$.
 ]
 
 <div class="my-footer"><span>`r Sys.Date()` - Henrik Hain - Current Advancements in Deep Reinforcement Learning</span></div>
@@ -189,13 +189,13 @@ A policy $\pi$ maps states to a probability distribution over actions $\pi:S \ri
 ]
 
 .right-column[
-The reward defines the goal of a reinforcment learning problem. On each time step, the environment emmits a scalar reward value.
+Reinforcement learning goal $\rightarrow$ reward maximization
 .right[
 <img src="./img/student_reward.png" width="40%" />
 <img src="./img/student_mdp.png" width="40%" />
 <br>Images: <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=13&ved=2ahUKEwjIsKPe7ujoAhVM26QKHQG2BhwQFjAMegQIBRAB&url=https%3A%2F%2Fwww.davidsilver.uk%2Fwp-content%2Fuploads%2F2020%2F03%2FMDP.pdf&usg=AOvVaw2G8xS6pXLns1mo_vKVQmE3">David Silver</a>
 ]
-A value function specifies long-term desirabilities. The state value is defined as the sum of discounted expected future rewards $R_t=\sum_{i=t}^{T}\gamma^{(i-t)}r(s_i,a_i)$.
+State value $\rightarrow$ sum of discounted expected future rewards $R_t=\sum_{i=t}^{T}\gamma^{(i-t)}r(s_i,a_i)$.
 ]
 
 <div class="my-footer"><span>`r Sys.Date()` - Henrik Hain - Current Advancements in Deep Reinforcement Learning</span></div>
@@ -215,11 +215,11 @@ A value function specifies long-term desirabilities. The state value is defined 
 ]
 
 .right-column[
-The problem of balancing exploration and exploitation can be formalized using so-called multi-armed bandit problems.
+Exploration vs. exploitation formalized as multi-armed bandit problem
 <br>
 <img src="./img/5-armed Bandit.png" width="100%" />
 <br>
-Multi-armed bandits are a reduced, non-associative case of the 'complete' reinforcement learning problem.
+Multi-armed bandits $\rightarrow$ non-associative reinforcement learning
 ]
 
 <div class="my-footer"><span>`r Sys.Date()` - Henrik Hain - Current Advancements in Deep Reinforcement Learning</span></div>
@@ -238,11 +238,11 @@ Multi-armed bandits are a reduced, non-associative case of the 'complete' reinfo
 ]
 
 .right-column[
-Balancing exploration and exploitation using an $\epsilon$-greedy action selection.
+Balance exploration vs. exploitation $\rightarrow$ $\epsilon$-greedy action selection
 .right[
 <img src="./img/bandit_reward.png" width="95%" />
 ]
-$\epsilon$-greedy: Select greedy action with probability $1-\epsilon$, else select at random.
+Select greedily with probability $1-\epsilon$, else randomly
 ]
 
 <div class="my-footer"><span>`r Sys.Date()` - Henrik Hain - Current Advancements in Deep Reinforcement Learning</span></div>
@@ -263,7 +263,7 @@ $\epsilon$-greedy: Select greedy action with probability $1-\epsilon$, else sele
 ]
 
 .right-column[
-An [optional] reinforcement learning model mimics environmental dynamics, enabling usage of optimal control and planning methods.
+[Optional] model mimicing environmental dynamics $\rightarrow$ optimal control / planning
 .right[
 <img src="./img/rl_model.png" width="55%" />
 <br>Image: <a href="https://arxiv.org/abs/1901.03737">Nathan Lambert</a>
@@ -282,7 +282,7 @@ An [optional] reinforcement learning model mimics environmental dynamics, enabli
 ]
 
 .right-column[
-Deep neural networks (DNN) excel in automatic hierarchical representation learning as well as function approximation, usually outperforming competing approaches.
+Deep neural networks (DNN) $\rightarrow$ representation learning, function approximation, scaling
 .right[
 <img src="./img/dl_why.png" width="85%" /><br>Image: <a href="https://towardsdatascience.com/how-managers-should-prepare-for-deep-learning-new-values-f29a98b70bd8">Richard Hackathorn</a>
 ]
@@ -301,7 +301,7 @@ Deep neural networks (DNN) excel in automatic hierarchical representation learni
 ]
 
 .right-column[
-Apart from established, application domain specific standard architecture patterns, neural network architectures provide a high degree of flexibility.
+Deep neural networks (DNN) -> high flexibility + domain specific standard realizations
 .right[
 <img src="./img/cmplx_deepnetwork.png" width="90%" /><br>Image: <a href="https://www.researchgate.net/publication/332219159_Quantum_Machine_Learning_for_6G_Communication_Networks_State-of-the-Art_and_Vision_for_the_Future">Junaid Nawaz et al.</a>
 ]
@@ -329,7 +329,7 @@ Apart from established, application domain specific standard architecture patter
 ]
 
 .right-column[
-Deep neural networks are neural networks consisting of multiple hidden layers, usually used for learning feature hierarchies.
+DNN are stacked neural network $\rightarrow$ exploitating feature hierarchies 
 .right[
     <img src="./img/shallow_network.png" width="49%" />
     <img src="./img/deep_network_features.png" width="49%" />
@@ -356,7 +356,7 @@ Deep neural networks are neural networks consisting of multiple hidden layers, u
 ]
 
 .right-column[
-Deep Q-Network (DQN) processing schematic and network attention saliency map of a trained DQN playing Space Invaders on an Atari 2600. 
+Deep Q-Network (DQN) $\rightarrow$ convolutional neural network + fully connected action predictor
 .right[
 <img src="./img/dl_cnn_dqn.jpg" width="68%" />
 <img src="./img/saliencymap_atari.png" width="30%" />
@@ -382,7 +382,7 @@ class: center, middle, inverse
 ]
 
 .right-column[
-OpenAI key research areas.
+Research areas
 .right[
 <img src="./img/openai_mainareas.svg" width="95%" />
 ]
@@ -401,7 +401,7 @@ OpenAI key research areas.
 ]
 
 .right-column[
-OpenAI key research areas citation counts.
+Citation counts / research area
 .right[
 <img src="./img/openai_mainarea_citations.svg" width="95%" />
 ]
@@ -422,8 +422,7 @@ OpenAI key research areas citation counts.
 ]
 
 .right-column[
-Top 5 most influential research papers according to citation counts.
-<br><br><br>
+Research of influence - Top 5
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;border-color:#9ABAD9;}
 .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-top-width:1px;border-bottom-width:1px;border-color:#9ABAD9;color:#444;background-color:#EBF5FF;}
@@ -432,7 +431,7 @@ Top 5 most influential research papers according to citation counts.
 .tg .tg-f48y{font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif !important;;border-color:inherit;text-align:left;vertical-align:top}
 .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
 </style>
-<table class="tg">
+<table class="tg" width="100%">
   <tr>
     <th class="tg-f48y">Year</th>
     <th class="tg-0pky">Cited By</th>
@@ -485,6 +484,8 @@ class: center, middle, inverse
 
 # Selected Advancements
 
+### Double Q-learning, Continuous Control, Asynchronous Methods, Proximal Policy Optimization, Model-Agnostic Meta-Learning
+
 ---
 # Selected Advancements
 
@@ -493,14 +494,8 @@ class: center, middle, inverse
 ]
 
 .right-column[
-Deep Reinforcement Learning with Double Q-learning
-.pull-left[
-- Both standard Q-learning and DQN use the same operator for action selection and evaluation.
-- Prone to overestimation action values
-- splitting argmax operator in action selection and evaluation
-- Reduces overestimation of expected values
-]
-.pull-right[
+Split $argmax$ operator $\rightarrow$ action selection, action evaluation
+.right[
 <img src="./img/dqn_overestimation.png" width="100%" /><br>Image: <a href="https://arxiv.org/abs/1509.06461">Hasselt et al.</a>
 ]
 ]
@@ -517,14 +512,8 @@ Deep Reinforcement Learning with Double Q-learning
 ]
 
 .right-column[
-Continuous Control With Deep Reinforcement Learning
-.pull-left[
-- Many tasks have continuous, high dimensional action spaces
-- Discretizing action space intractable with DQN
-- Adapts DQN for continuous control tasks
-
-]
-.pull-right[
+Deterministic policy gradient actor-critic approach to address continuous action spaces
+.right[
 <img src="./img/cc_performance.png" width="100%" /><br>Images: <a href="https://arxiv.org/abs/1509.02971">Lillicrap et al.</a>
 ]
 ]
@@ -544,6 +533,7 @@ Continuous Control With Deep Reinforcement Learning
 ]
 
 .right-column[
+Framework enabling _superlinear_ speedup with increasing number of threads (A3C)
 .right[
 <img src="./img/async_speed.png" width="100%" /><br><br><img src="./img/async_stability_a3c.png" width="100%" /><br>Images: <a href="https://arxiv.org/abs/1509.06461">Mnih et al.</a>
 ]
@@ -565,6 +555,7 @@ Continuous Control With Deep Reinforcement Learning
 ]
 
 .right-column[
+Enables end-to-end training via sampling from action probailities and policy rollouts
 .right[
 <img src="./img/ppo_algorithms.png" width="100%" /><br>Image: <a href="https://arxiv.org/abs/1707.06347">Schulman et al.</a>
 ]
@@ -588,6 +579,7 @@ Continuous Control With Deep Reinforcement Learning
 ]
 
 .right-column[
+Achieve fast learning on new tasks by providing _good_ parameter initialization
 .right[
 <img src="./img/maml.png" width="80%" /><br>Image: <a href="https://bair.berkeley.edu/blog/2017/07/18/learning-to-learn/">Berkeley</a>
 ]
@@ -598,16 +590,54 @@ Continuous Control With Deep Reinforcement Learning
 ---
 # Conclusion and Outlook
 
-.left-column[
+Deep reinforcement learning is a thriving and brimming field
 
-]
+Many large and small advancements in quick succession
 
-.right-column[
+Simple, but smart, ideas seem to achieve the greatest success
 
-]
+Current research mostly concentrated on model-free methods
+
+Reinforcement learning can be used beneficial in almost every area!
 
 <div class="my-footer"><span>`r Sys.Date()` - Henrik Hain - Current Advancements in Deep Reinforcement Learning</span></div>
 
 ---
-class: center, middle
-# Thanks!
+class: center, middle, inverse
+# Thank You!
+
+---
+# Links & References
+
+Deepmind, Google (2019, January 24). _AlphaStar: Mastering the Real-Time Strategy Game StarCraft II._ Retrieved from [https://deepmind.com/blog/article/alphastar-mastering-real-time-strategy-game-starcraft-ii](https://deepmind.com/blog/article/alphastar-mastering-real-time-strategy-game-starcraft-ii).
+
+OpenAI, (2019, October 15). _Solving Rubik's Cube with a Robot Hand._ Retrieved from [https://openai.com/blog/solving-rubiks-cube/](https://openai.com/blog/solving-rubiks-cube/).
+
+Deepmind, Google (2018, December 6). _AlphaZero: Shedding new light on chess, shogi, and Go._ Retrieved from [https://deepmind.com/blog/article/alphazero-shedding-new-light-grand-games-chess-shogi-and-go](https://deepmind.com/blog/article/alphazero-shedding-new-light-grand-games-chess-shogi-and-go).
+
+UCL Course, David Silver (2015, January 1). _Markov Decision Processes._ Retrieved from [https://www.davidsilver.uk/wp-content/uploads/2020/03/MDP.pdf](https://www.davidsilver.uk/wp-content/uploads/2020/03/MDP.pdf).
+
+Lambert, Nathan et al. (2019, January 11). _Low Level Control of a Quadrotor with Deep Model-Based Reinforcement Learning._ Retrieved from [Low Level Control of a Quadrotor with Deep Model-Based Reinforcement Learning](Low Level Control of a Quadrotor with Deep Model-Based Reinforcement Learning).
+
+Hackathorn, Richard. (2018, August 20). _How Managers Should Prepare for Deep Learning: New Values._ Retrieved from [https://towardsdatascience.com/how-managers-should-prepare-for-deep-learning-new-values-f29a98b70bd8](https://towardsdatascience.com/how-managers-should-prepare-for-deep-learning-new-values-f29a98b70bd8).
+
+Junaid Nawaz, Syed et al. (2019, April 1). _Quantum Machine Learning for 6G Communication Networks: State-of-the-Art and Vision for the Future._ Retrieved from [https://ieeexplore.ieee.org/document/8681450](https://ieeexplore.ieee.org/document/8681450).
+
+<div class="my-footer"><span>`r Sys.Date()` - Henrik Hain - Current Advancements in Deep Reinforcement Learning</span></div>
+
+---
+# Literature References
+
+Mnih, Volodymyr et al. (2013, December 19). _Playing Atari with Deep Reinforcement Learning._ Retrieved from [https://arxiv.org/abs/1312.5602](https://arxiv.org/abs/1312.5602).
+
+Lillicrap, Timothy P. (2015, September 9). _Continuous Control With Deep Reinforcement Learning._ Retrieved from [https://arxiv.org/abs/1509.02971](https://arxiv.org/abs/1509.02971).
+
+Mnih, Volodymyr et al. (2016, February 4). _Asynchronous Methods for Deep Reinforcement Learning._ Retrieved from [https://arxiv.org/abs/1602.01783](https://arxiv.org/abs/1602.01783).
+
+Schulman, John et al. (2015, February 19). _Trust Region Policy Optimization Algorithms._ Retrieved from [https://arxiv.org/abs/1502.05477](https://arxiv.org/abs/1502.05477).
+
+Hasselt, Hado van et al. (2015, September 22). _Deep Reinforcement Learning with Double Q-learning._ Retrieved from [https://arxiv.org/abs/1509.06461](https://arxiv.org/abs/1509.06461).
+
+Finn, Chelsea et al. (2017, March 9). _Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks._ Retrieved from [https://arxiv.org/abs/1703.03400](https://arxiv.org/abs/1703.03400).
+
+<div class="my-footer"><span>`r Sys.Date()` - Henrik Hain - Current Advancements in Deep Reinforcement Learning</span></div>

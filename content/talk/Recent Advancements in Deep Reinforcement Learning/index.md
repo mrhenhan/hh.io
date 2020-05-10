@@ -1,7 +1,7 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 title: "Recent Advancements in Deep Reinforcement Learning"
-draft: true
+draft: false
 event: "Seminar KIT"
 event_url: "https://sdqweb.ipd.kit.edu/wiki/Seminar_Daten_in_software-intensiven_technischen_Systemen_%E2%80%93_Modellierung_%E2%80%93_Analyse_%E2%80%93_Schutz_WS19/20"
 location: Remote
@@ -27,7 +27,7 @@ date_end: 2020-05-08T14:00:00+02:00
 all_day: false
 
 # Schedule page publish date (NOT talk date).
-publishDate: 2020-05-08T15:00:00+02:00
+publishDate: 2020-05-08T13:00:00+02:00
 
 authors: [mrhenhan, Dipl.-Ing. Daniel Zimmermann]
 tags: [deep learning, reinforcement learning, deep reinforcement learning, neural networks, machine learning, AI-agents, Deep Q-learning]
@@ -55,7 +55,7 @@ links:
 url_slides: "/slides/Recent-Advancements-in-Deep-Reinforcement-Learning/Recent-Advancements-in-Deep-Reinforcement-Learning.html"
 
 url_code:
-url_pdf:
+url_pdf: "/slides/Recent-Advancements-in-Deep-Reinforcement-Learning/Recent-Advancements-in-Deep-Reinforcement-Learning.pdf"
 url_video:
 
 # Markdown Slides (optional).
