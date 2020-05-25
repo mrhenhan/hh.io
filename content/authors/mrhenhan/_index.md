@@ -15,7 +15,7 @@ role: Data Scientist / Data Engineer
 # Organizations/Affiliations
 organizations:
 - name: All.In Data GmbH
-  url: "https://www.all-in-data.de/en/"
+  url: "https://www.all-in-data.de/de/"
 
 # Short bio (displayed in user profile at end of posts)
 bio: My (research) interests evolve all around the theoretical and practical software engineering aspects of (self-) learning systems and algorithms, especially (deep) reinforcement learning, spatio-temporal event detection, and computer vision approaches.
@@ -79,6 +79,6 @@ email: "henrik.hain@all-in-data.de"
 #- Researchers
 #- Visitors
 ---
-Henrik is a data scientist and (data) engineer at All.In Data GmbH located in beautiful Mannheim, Germany. His work and research interests include (deep) reinforcement learning, machine learning, software engineering, and natural language processing where he successfully applied his expertise in academic research as well as in real-world business projects in finance, EPC project management, and large online retail. 
+I am a data scientist and (data|software) engineer at [All.In Data GmbH](https://www.all-in-data.de/de/) located in beautiful [Mannheim, Germany](https://en.wikipedia.org/wiki/Mannheim). My work and research interests include (deep) reinforcement learning, machine learning, software engineering, and natural language processing where I successfully applied my expertise in academic research as well as in real-world business projects in finance, EPC project management, and large online retail. 
 
-He has a preference for elegantly designed, efficient and minimal systems and does not take a liking in burying regular problems with overengineered or oversized solutions, which is sometimes the reason for being admonished by his boss Florian for getting lost in details. Actually Henrik has nothing against it.
+I have a preference for elegantly designed, efficient and minimal systems and do not like overengineered or oversized solutions, which is sometimes the reason for being admonished by my boss Florian for getting lost in details and tinkering too much.
