@@ -18,7 +18,7 @@ organizations:
   url: "https://www.all-in-data.de/de/"
 
 # Short bio (displayed in user profile at end of posts)
-bio: My (research) interests evolve all around the theoretical and practical software engineering aspects of (self-) learning systems and algorithms, especially (deep) reinforcement learning, spatio-temporal event detection, and computer vision approaches.
+bio: My (research) interests evolve around the practical and theoretical aspects of software engineering, (self-) learning systems and algorithms, especially (deep) reinforcement learning, spatio-temporal event detection, and computer vision approaches.
 
 interests:
 - Data science
