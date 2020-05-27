@@ -27,11 +27,19 @@ image:
 #   Otherwise, set `projects = []`.
 projects: ["cli-ranker"]
 ---
-Information retrieval and data mining tasks, e.g. online search, the presentation order of queried goods in a webshop, and the preferred order of online advertisements have a thing in common. They are essentially **ranking problems** which are typically tackled with the help of **learning to rank** algorithms. **Learning to rank** is considered a subarea of **machine learning**, concentrating on the development of request data based models for solving ranking problems.
+Information retrieval and data mining tasks, e.g. online search, the presentation order of queried goods in a webshop, or the preferred order of online advertisements have a thing in common. They are essentially **ranking problems** which are typically tackled with the help of so called **learning to rank** algorithms. **Learning to rank** is considered a subarea of **machine learning**, concentrating on the development of request data based models for solving ranking problems.
 
 Although learning to rank is not a finally solved problem, there is a great interest in extending the current capabilities of learning to rank algorithms for real-world applications in such a way that the interests of query and response providers are equally satisfied. Because the previous fact sounds a bit abstract at first, I will try to explain this with a simple example, from the online retailer business domain, that will accompany us throughout the rest of this article.
 
+## Example Case: All.In Retail Online Shop
 
+We assume that we are the operators of a large online business, called All.In Retail a company of the [All.In Data](https://www.all-in-data.de/de/) Group, and we have a contiuous large amount of customers of different psychological types, tastes, and so on. In addition, despite a wide range of products, we have many products of almost functional equivalence, but associated with different margins, storage, procurements or processing costs.
+
+After a certain period of time we begin to notice that the search function of our online presence returns the products requested by the customer, but it does not prioritize or devalue the products that are associated with high margins or storage costs or high procurement or processing costs for us.
+
+We also find that there is no difference in the conversion or churn rate between the number of customers who come directly to a product page from an external source and those who use the internal search.
+
+## Example Case: Learning to Rank and Personalization
 
 
 
