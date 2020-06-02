@@ -128,6 +128,7 @@ cyclic_times.sample(75).plot.scatter('sine_time','cosine_time').set_aspect('equa
 
 Have fun evaluating the effects of your transformed cyclic values on your machine learning models.
 
+
 Kind regards,
 
 Henrik Hain
