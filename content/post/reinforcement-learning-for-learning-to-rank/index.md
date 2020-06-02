@@ -2,15 +2,15 @@
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
 title: "Personalize Learning to Rank Results through Reinforcement Learning"
-subtitle: "An approach to bias information retrieval result rankings with respect to user preferences by applying reinforcement learning principles on the problem area of learning to rank."
-summary: "Learning to optimally rank and personalize search results is a difficult important topic in scientific information retrieval as well as in online retail business, where we typically want to bias specific customer query results for the purpose of increasing revenue. Reinforcement learning, as a generic-flexible learning model, is able to bias, e.g. personalize, learning-to-rank results at scale, so that externally specified goals, e.g. an increase in sales and probably revenue, can be achieved. This article introduces the topics learning-to-rank and reinforcement learning in a problem-specific way and is accompanied by the example project 'cli-ranker', a command line tool utilizing reinforcement learning principles for learning user information retrieval preferences regarding text document ranking."
+subtitle: "Introduction to Learning to Rank and Reinforcement Learning for Personalization Purposes"
+summary: "Learning to optimally rank and personalize search results is a difficult and important topic in scientific information retrieval as well as in online retail business, where we typically want to bias customer query results with respect to specific preferences for the purpose of increasing revenue. Reinforcement learning, as a generic-flexible learning model, is able to bias, e.g. personalize, learning-to-rank results at scale, so that externally specified goals, e.g. an increase in sales and probably revenue, can be achieved. This article introduces the topics learning-to-rank and reinforcement learning in a problem-specific way and is accompanied by the example project 'cli-ranker', a command line tool utilizing reinforcement learning principles for learning user information retrieval preferences regarding text document ranking."
 authors: ["mrhenhan"]
 tags: ["personalization", "LambdaMart", "search engine", "LambdaRank", "RankNet", "document retrieval", "online retail", "BM25", "PageRank", "eCommerce"]
 categories: ["reinforcement learning", "learning to rank", "machine learning"]
-date: 2020-05-14T11:08:11+02:00
-lastmod: 2020-05-14T11:08:11+02:00
+date: 2020-06-03T09:30:11+02:00
+lastmod: 2020-06-03T09:30:11+02:00
 featured: false
-draft: true
+draft: false
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
@@ -27,47 +27,51 @@ image:
 #   Otherwise, set `projects = []`.
 projects: ["cli-ranker"]
 ---
-Information retrieval and data mining tasks, e.g. online search, the presentation order of queried goods in a webshop, or the preferred order of online advertisements have a thing in common. They are essentially **ranking problems** which are typically tackled with the help of so called **learning to rank** algorithms. **Learning to rank** is considered a subarea of **machine learning**, concentrating on the development of request data based models for solving ranking problems.
+Information retrieval, data mining tasks, the search feature of an online retailer, the presentation have one thing in common! They are essentially **ranking problems**, which are typically tackled with the help of so called **learning to rank** algorithms. **Learning to rank** is considered a subarea of **machine learning**, concentrating on the development of request data based models for solving ranking problems.
 
-Although learning to rank is not a finally solved problem, there is a great interest in extending the current capabilities of learning to rank algorithms for real-world applications in such a way that the interests of query and response providers are equally satisfied. Because the previous fact sounds a bit abstract at first, I will try to explain this with a simple example, from the online retailer business domain, that will accompany us throughout the rest of this article.
+Although learning to rank is not a finally solved problem, there is a great interest in extending the current capabilities of learning to rank algorithms for real-world applications in such a way that the interests of query and response providers are equally satisfied. Because the previous fact sounds a bit abstract at first, I will try to explain this with a simple example from the online business domain, that will accompany us throughout the rest of this and the next article and will show **how our personalized learning to rank solution will increase your online business revenue stream**.
 
 ## Example Case: All.In Retail Online Shop
 
-We assume that we are the operators of a large online business, called All.In Retail a company of the [All.In Data](https://www.all-in-data.de/de/) group, and we have a contiuous large stream of webshop visitors of different psychological types, tastes, and so on. In addition, despite a wide range of products, we have many products of almost functional equivalence, but associated with different margins, storage, procurements or processing costs.
+We assume we are operators of a large online business, called All.In Retail a company of the [All.In Data](https://www.all-in-data.de/de/) group, and we have a continuous large stream of webshop visitors of different psychological types, tastes, and so on. In addition, despite a wide range of products, we have many products of almost functional equivalence, but associated with different margins, storage, procurements or processing costs.
 
-After a certain period of time we begin to notice that although the search function of our online shop returns the products requested by the customer just fine, it does not prioritize or devalue the products that are associated with high margins, storage costs or high procurement or processing costs for us.
+After a certain period of time we begin to notice that although the search function of our online shop returns the products requested by the customers just fine, it does not prioritize or devalue products associated with high margins, storage costs or high procurement or processing costs.
 
-We also find that there is no difference in the conversion or churn rate between the number of customers who come directly to a product page from an external source and those who use the internal search. This also calls into question the way the recommendation measures are working and how they are related to the internal search engine.
+We also find that there is no difference in the conversion or churn rate between the number of customers who directly visit a product page from an external source and those who use the internal search. This also calls into question the way the recommendation measures are working and how they are related to our internal search engine.
+
+{{% alert info %}}
+Did you know that you can consult [All.in Data GmbH](https://www.all-in-data.de/de/kontakt/) about how to increase the performance of your online business and that we are happy to make you an individual offer regarding the use of our ranking solution? 
+{{% /alert %}}
 
 ## Example Case: Learning to Rank and Personalization
 
-Analyzing the previous description it becomes rather obvious that we have a rather specific balancing problem at hand. Without complicating the problem by taking areas like, e.g. after-sales into account, we intend to optimize revenue by selling those products with the highest margin and lowest possible processing or maintaining costs as often as possible. This means that we would like to have them appear in a prominent position in related search queries.
+Analyzing the previous description it becomes obvious that we have a very specific balancing problem at hand. Without complicating the issue by taking areas like, e.g. after-sales into account, we intend to optimize revenue by selling product variants with the highest margin and lowest possible processing or maintaining costs, as often as possible. This means that we would like to have them appear in a prominent position in related search queries or recommendations.
 
 {{% alert note %}}
 Prioritize and weight products with high profit margins and low costs in internal related search queries with the help of learning to rank algorithms!
 {{% /alert %}}
 
-The aforementioned goal is a typical target for so-called learning to rank algorithms, which are used currently more and more prominently in the area of online retail business and web searches. Relatedly, these algorithms can also be used to influence or bias recommendation engine results.
+The aforementioned goal is a typical target for so-called learning to rank algorithms, which are used currently more and more prominently in the area of online retail business and web searches. Relatedly, the algorithms can also be adapted in a way to influence or bias recommendation engine results in our favor.
 
-The second part of the optimization procedure is based on the hypothesis, that the probability of closing a sales together with the probability of visitor revisits will increase with higher search result and visualization personalization according to the psychological type of the visitor.
+The second part of the optimization procedure is based on the hypothesis, that the probability of closing a sale together with the probability of visitor revisits will increase with higher search result and visualization personalization, according to the psychological type of the visitor.
 
 {{% alert note %}}
 Probability of closing a sale and the probability of visitor revisits will increase with higher search result and visualization personalization according to the psychological type of the visitor!
 {{% /alert %}}
 
-Usually visitor product preferences are conflicting with our goal of increasing revenue, thus we need to balance our preferences against personal visitor preferences leading to the $volume \times frequency$ [^1] optimization problem. The $volume \times frequency$ formulation states that we ideally want to increase the single sales transaction $volume$, e.g. the margin and want to increase the $frequency$ this transaction happens, given that there are no _transaction costs_ involved.
+Quite often visitor product preferences conflict with our goal of increasing revenue, thus we need to balance our product preferences against personal visitor preferences, subsequently leading to the $volume \times frequency$ [^1] optimization problem. The $volume \times frequency$ formulation states that we ideally want to increase the single sales transaction $volume$, e.g. the margin and want to increase the $frequency$ this transaction happens in parallel, given that there are no _transaction costs_ involved.
 
 {{% alert warning %}}
 We need to balance our search proposal preferences against personal visitor preferences to optimize the typical $volume \times frequency$ formulation.
 {{% /alert %}}
 
-In order to get an optimal result, meaning a sufficient number of visitors ($frequency$) buy products with high revenue ($volume$), we need to bias the search engine results, i.e. the ranking of the internal search or recommendation egine, so that we meet the needs of the respective psychological customer type according to the aformentioned personalization hypothesis and thus sell more often ($frequency$) and optimize our profit ($volume$) parallely.
+In order to get an optimal result, meaning a sufficient number of visitors ($frequency$) buy products with high revenue ($volume$), we need to bias our search engine results, i.e. the ranking of the internal search or recommendation engine, so that we meet the needs of the respective customer psychology and preferences, according to the aformentioned personalization hypothesis and thus sell more often ($frequency$) and optimize our profit ($volume$) parallely.
 
 The next part introduced learning to rank in a generic way before we introduce how deep learning, or more specifically, deep reinforcement learning can be used to dynamically shift search engine results in a way that will optimize the $volume \times frequency$ optimization problem according to the different psychological visitor types.
   
 ## Learning to Rank
 
-Usually, learning to rank is formalized as supervised machine learning problem where the training data consist of a set of objects together with their total or partial orders and a specific ranking model, e.g. a ranking function approximation is learned via a neural net for example.  The learning to rank method is the place where we introduce our personal preferences by parameterizing the used algorithm. 
+Usually, learning to rank is formalized as supervised machine learning problem where the training data consist of a set of objects together with their total or partial orders and a specific ranking model, e.g. a ranking function approximation is learned via a neural net for example.  The learning to rank method is the place where we introduce our personal preferences by parameterizing the used algorithm with the help of (deep) reinforcement learning.
 
 {{% alert note %}}
 Personal ranking preferences can be introduced to the ranking method through parameterization of the ranking algorithm.
@@ -139,25 +143,31 @@ $$
 
 DCG as well as NDCG values are further averaged over queries in model evaluation.
 
-# two learning to rank algorithms
+## Supervised Objective Learning Function
 
-# Learning to rank influence parameters
+In the present case, the learning to rank task is defined within the machine learning framework of supervised learning. Remembering formerly introduced differences w.r.t the input and output data in comparison to normally specified supervised machine learning tasks, we will consider $X$ as the feature space build from list of feature vectors and $Y$ as the output space in form of lists of grades, with $x \in X$ being a list of feature vectors and $y \in Y$ being a list of grades. Assume $P(X,Y)$ is an unknown joint probability over the random variables $X$ and $Y$. Subsequently $F(.)$ is a function realizing a mapping $X \rightarrow Y$. As usual we want to learn an estimation $\hat{F}(.)$ of $F(.)$ [^2]. Furthermore, we need a specific loss function $L(.,.)$ or $L(\hat{F}(x),y)$ to evaluate the ranking results of $\hat{F}(.)$. One has to bear in mind, that the loss function is defined a little bit different than in other statistical learning tasks, as it intrinsically involves sorting. Loss based on NDCG can be defined as
 
-# Reinforcement Learning Introduction
+$$
+L(\hat{F}(x), y) = 1 - NDCG,
+$$
+Did you know that we are able to evaluate
+with the empirical risk or objective learning function being
 
-# Reinforcement Learning for learning to rank
+$$
+\hat{R}(F) = \frac{1}{m} \sum_{i=1}^{m} L(\hat{F}(x_i),y_i).
+$$
 
-# Software Engineering aspect/Systems integrations
+As in other learning tasks, learning corresponds to the minimization of the risk function, though minimization could prove difficult because the loss function is usually not continuous and additionally involves sorting.
 
-# CLI sample project
+## Conclusion
 
-# Offer to solve learning to rank problems
-  
+In this article we have introduced learning to rank for online retail, eCommerce, respectively for sales in general and introduced the balancing or optimization problem between sales and customer preferences in a simple form. Furthermore, we introduced learning to rank and emphazised the parameterization possibilities we use to address former optimization problem dynamically with the help of (deep) reinforcement learning. In the following article we will present two state of the art learning to rank algorithms and how our solution will improve online retail revenue by optimizing former balancing problem dynamically on an existing visitor stream.
 
-Part of intro
-- Learning to rank itself challenging and far from beeing solved but 2 other sides to learning to rank which should be balanced / balancing problem -> provider presents things that he wants to be found and that closely match what the querier wants to find
-  1. Personalization, e.g. retrieving Information I prefer to find
-  2. External bias Information the provider likes to be found (e.g. products who have a large margin, high storage costs and so forth.)
-  
+
+Kind regards,
+
+Henrik Hain
+
 
 [^1]: Simple formulation without discriminatory parameters.
+[^2]: $F(.)$ typically denotes the global ranking function and $f(.)$ denotes the local ranking function.
