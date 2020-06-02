@@ -25,8 +25,9 @@ image:
 #   Otherwise, set `projects = []`.
 projects: []
 ---
-There are serveral ways to increase the turnover of a typical online retailer. One of the many possible optimization is to influence the proportion between buyers and non-buyers in such a way that turnover and profit increases increase. The proportion of buyers in a visitor population over a period of time can be determined by the _conversion rate_, whereas the proportion of non-buyers can be characterized by the complement of the conversion rate, the so-called _churn rate_. Thus, naive conversion rate for the number of visitors in a time interval $t$ can be defined as 
+There are serveral specific ways to increase the turnover in online retail business. Many possible optimization procedures address manipulating the proportion between buyers and non-buyers such that turnover and profit increases, e.g. by converting non-buyers to buyers. The proportion of buyers in a visitor population over a period of time can be determined by the _conversion rate_, whereas the proportion of non-buyers can be characterized by the complement of the conversion rate, the so-called _churn rate_. Thus, naive conversion rate for the number of visitors in a time interval $t$ can be defined as 
 
 $$Rate_{conversion}=\\frac{|Visitors_{buyers}|}{|Visitors|}$$
    
-and the complementary churn rate being $1-Rate_{conversion}$.
+with the complementary churn rate being $1-Rate_{conversion}$.
+

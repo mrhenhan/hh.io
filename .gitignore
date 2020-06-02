@@ -3,5 +3,7 @@
 
 # Hugo
 resources/
-public
+public/
 .Rproj.user
+.Rdata
+.Rhistory
