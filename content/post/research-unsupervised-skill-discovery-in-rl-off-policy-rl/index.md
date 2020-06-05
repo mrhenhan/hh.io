@@ -7,8 +7,8 @@ summary: "Scientists from Google AI have published exciting research regarding u
 authors: ["mrhenhan"]
 tags: ["google brain", "google research", "deep reinforcement learning", "deep learning", "model based reinforcement learning", "planning in reinforcement learning", "DADS"]
 categories: ["current advancements in reinforcement learning", "unsupervised machine learning", "research"]
-date: 2020-06-02T19:43:34+02:00
-lastmod: 2020-06-02T19:43:34+02:00
+date: 2020-06-05
+lastmod: 2020-06-05
 featured: false
 draft: false
 
