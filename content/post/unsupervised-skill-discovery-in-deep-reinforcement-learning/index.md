@@ -1,8 +1,8 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-title: "Research Unsupervised Skill Discovery in Rl Off Policy Rl"
-subtitle: "Google AI: DADS - Unsupervised Reinforcement Learning for Skill Discovery"
+title: "Unsupervised Skill Discovery in Deep Reinforcement Learning"
+subtitle: "Google AI: DADS - Unsupervised Off-Policy Reinforcement Learning for Skill Discovery"
 summary: "Scientists from Google AI have published exciting research regarding unsupervised skill discovery in deep reinforcement learning. Essentially it will be possible to utilize unsupervised learning methods to learn model dynamics and promising skills in an unsupervised, model-free reinforcement learning enviroment, subsequently enabling to use model-based planning methods in model-free reinforcement learning setups."
 authors: ["mrhenhan"]
 tags: ["google brain", "google research", "deep reinforcement learning", "deep learning", "model based reinforcement learning", "planning in reinforcement learning", "DADS"]

@@ -150,7 +150,7 @@ In the present case, the learning to rank task is defined within the machine lea
 $$
 L(\hat{F}(x), y) = 1 - NDCG,
 $$
-Did you know that we are able to evaluate
+
 with the empirical risk or objective learning function being
 
 $$
