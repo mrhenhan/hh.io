@@ -61,28 +61,54 @@ with the five most common violations being
 
 according to [Wickham](https://scholar.google.com/scholar?oi=bibs&cluster=7796623832662932979&btnI=1&hl=en)
 
-If a relational database adheres to Codd's 3rd normal form, it should be easy to extract arbitrary observational units for analysis and to persist results. Furthermore, operating on tidy data is a fundamental step for adopting data stewardship practices.
+If a relational database adheres to Codd's 3rd normal form, it should be easy to extract arbitrary observational units for analysis and to persist analysis results. Furthermore, operating on tidy data is a fundamental step for adopting data stewardship practices.
 
-Before presenting specific violation examples and how to tidy them using Python and alternatively R, we introduce typical data manipulation methods used for the purpose of data manipulation.
+Before presenting specific violation examples and how to tidy them using Python and R in the next blog post, we introduce typical data manipulation methods used for the purpose of data manipulation.
 
 ### Data Manipulation
 
-### Examples
+Data manipulation is mostly accomplished with the help of four simple base operations.
 
-#### Variables as Column Headers
+1. **Filter:** _Create a subset by removing or keeping observations based on a condition._
+2. **Transform:** _Directly add or modify variables in question, either single or multiple variables at once._
+3. **Aggregate:** _Calculate a single value from multiple values._
+4. **Sort:** _Manipulate the order of observations._ 
 
-#### Columns with Multiple Variables
+Python with Pandas and R provide multiple functions implementing the four base operations. Those functions are typically modified with a "by" preposition for allowing calculations to be performed on distinct subsets.
 
-#### Variables in Rows and Columns
+Ideally, an operation on tidy inptut data results in equally tidy output data, because it is easy to combine tidy datasets, e.g. with the help of a **join**-operator.
 
-#### Multiple Types in one Table
+## Tidy Types and Tidy Operations
 
-#### One Type in multiple tables
+Although [Wickham](https://scholar.google.com/scholar?oi=bibs&cluster=7796623832662932979&btnI=1&hl=en) already described _tidy types_ basically as single variable either being a string or numerical, we want to give an overview on those _tidy types_ and their features, as they have implications regarding _semantically valid_ operations for analysis. Thus value domains for types should be chosen with great care, as a transformation of a variable from one domain to another is possible if and only if the transformation preserves the structure of the original domain!
 
-## Tidy Types
+Tidy types come in five scales of measurement presented in the following taxonomy table adapted from the book [Pattern Recognition](https://www.iosb.fraunhofer.de/servlet/is/80361/).
 
-## Tidy Operations
+|*Trait*                   |  Nominal Scale    | Ordinal Scale     | Interval Scale    | Ratio Scale       | Absolut Scale        |
+|------------------------- | ------------------| ------------------| ------------------| ------------------| ---------------------|
+|**Empirical relation**    | Equivalence $~$   | Equivalence $~$   | Equivalence $~$   | Equivalence $~$   | Equivalence $~$      |
+|                          |                   | Ordering $<$      | Ordering $~$      | Ordering $<$      | Ordering $<$         |
+|**Empirical operation**   |                   |                   | Addition $+$      | Addition $+$      |                      |
+|                          |                   |                   |                   | Multipl. $\times$ | Addition $+$         |
+|                          |                   |                   |                   |                   | Multipl. $\times$    |
+|**Allowed transformation**| $m' = f(m)$       |  $m' = f(m)$      | $m' = am + b$     | $m' = am$         | $m' = m$             |
+|                          | injective         | strictly incr.    | with $a > 0$      | with $a > 0$      |                      |
+|**Typical domain**        | Integers, Names,  | Integers          | Real numbers      | Real numbers      | Natural Numbers      |
+|                          | Symbols           |                   |                   |                   |                      |
+|**Expressiveness**        | very low          | low               | medium            | high              | very high            |
+|**Examples**              | Mobile numbers,   | School grades,    | Temp. in F,       | Temp. in K,       | Electron count,      |
+|                          | Postal codes,     | Degree of hard.,  | Calendar time,    | Electric current, | Euler character.,    |
+|                          | Gender,           | Wind intens.,     | Geograph. alt.    | Account balance,  | Numb. of test fails. |
+|                          | Scale name        | Scale expressiv.  |                   | Edge length       |                      |
+  
+[J.Beyerer et al. - Pattern Recognition](https://www.iosb.fraunhofer.de/servlet/is/80361/)
 
-## Conclusion
+To obtain correct analyses of high significance, it is necessary to select the correct data types and domains for an analysis on the one hand, and to perform only semantically correct operations on these data types on the other. This is what tidy types and tidy operations means.
 
-## References
+Finally, it should be noted that tidy data should be constructed on the basis of correct types and domains, the so-called tidy types and operations on tidy input data, which should be derived from the operations allowed for the data domain to subsequently generate tidy output data for subsequent downstream analysis.
+
+Keeping and maintaining data in a tidy form is one of the main concerns of data stewardship which facilitates and accelerates data analysis and machine learning operations.
+
+Kind regards,
+
+Henrik Hain
