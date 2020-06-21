@@ -5,8 +5,8 @@ title: "Time Series Data Clustering Distance Measures"
 subtitle: "Typical approaches and distance metrics for unsupervised time series clustering"
 summary: "As ubiquitous as time series are, it is often of interest to identify clusters of similar time series in order to gain better insight into the structure of the available data. However, unsupervised learning from time series data has its own stumbling blocks. For this reason, the following article presents some helpful time series specific distance metrics and basic procedures to work successfully with time series data."
 authors: ["mrhenhan"]
-tags: ["time series", "data clustering", "distance metrics", "distance measures", "unsupervised", "machine learning"]
-categories: ["machine learning", "unsupervised"]
+tags: ["time series", "data clustering", "distance metrics", "distance measures", "unsupervised learning", "machine learning"]
+categories: ["machine learning", "unsupervised learning"]
 date: 2020-06-20T12:45:56+02:00
 lastmod: 2020-06-20T12:45:56+02:00
 featured: false
