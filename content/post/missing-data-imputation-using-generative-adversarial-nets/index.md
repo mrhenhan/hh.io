@@ -49,7 +49,6 @@ and some generative imputation mechanisms would be
 - [Denoising Autoencoders (DAE)](https://dl.acm.org/doi/10.1145/1390156.1390294)
 - [Methods based on generative adversarial networks (GAN) and DAE](https://www.cc.gatech.edu/~hays/7476/projects/Avery_Wenchen/)
 
-
 In this post we are reviewing a more recent novel generative approach from 2018 by Yoon et al. They use a customized generative adversarial network for missing data imputation called [GAIN](https://arxiv.org/abs/1806.02920) which outperforms MICE, MissForest, Matrix, Auto-encode, and EM by a rather large margin on serveral different datasets regarding area under the curve (AUROC), mean bias and mean square error (MSE) performance metrics. So, how does it work?
 
 ## How does it work?
