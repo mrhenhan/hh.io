@@ -31,7 +31,11 @@ Effective and efficient time series representation learning poses an important t
 
 Foruin et al. evaluate SOM-VAE using the static [(Fashion-)MNIST data](https://github.com/zalandoresearch/fashion-mnist) from [Zalando research](https://research.zalando.com/), a [chaotic Lorenz attractor system](https://en.wikipedia.org/wiki/Lorenz_system) with two macro states, and medical time series data from the [eICU dataset](https://eicu-crd.mit.edu/).
 
-## How Does it Work?
+## What Are The Benefits?
+
+Learning lower dimensional representations of high dimensional data often enables and facilitates processing by reducing processing and memory complexity on downstream tasks. Furthermore, the availability of human interpretable, lower-dimensional time series representations often makes data interpretability possible while reducing human error during the process, which in turn facilitates research and business. In case of SOM-VAE this is achieved by incooperation of well understood model components, like utilizing a self-organizing map for mapping "states from an uninterpretable continuous space to a lower-dimensional space with a predefined topologically interpretable structure..." - [[Foruin et al.]](https://arxiv.org/abs/1806.02199) in conjunction with a Markov component for addressing the contextual attribute of a time series.
+
+## How Does It Work?
 
 Essentially, Foruin et al. used a generative deep learning network (VAE) and extended it to be able to capture temporal smoothness in a discrete representation space by combining it with a self-organizing map (SOM) which introduces topological neighborhood relationships. As the classical SOM formulation has no notion of time, they extend SOM with a probabilistic transition Markov model in such a way, that single time point representations are enriched with information from adjacent time points in the series.
 
@@ -39,9 +43,10 @@ Essentially, Foruin et al. used a generative deep learning network (VAE) and ext
 
 The schematic overview depicts time series from the data space [green] being encoded by a neural network [black] time-point wise into the latent space. With the help of a self-organizing map [red] data from the data manifold is being approximated. The discrete representation is achieved by mapping every data point $z_e$ from the latent space to its closest node $z_q$ in the self-organizing map. Subsequently, they train a Markov transition model [blue] for predicting the next discrete representation $z_q^{t+1}$ using the current representation $z_q^t$. Eventually, learned discrete representations can be decoded with the help of another neural network. 
 
-Foruin et al.'s tensorflow-based SOM-VAE implementation is available at GitHub.
+Make sure to have a look at their research paper, as it is quite facinating! Foruin et al.'s original [tensorflow-based](https://www.tensorflow.org/) SOM-VAE implementation, as well as a [PyTorch](https://pytorch.org/) version are available from GitHub.
 
-SRC-Code: [SOM-VAE Repository](https://github.com/ratschlab/SOM-VAE)
+- [SOM-VAE (tensorflow)](https://github.com/ratschlab/SOM-VAE)
+- [SOM-VAE (pytorch)](https://github.com/KurochkinAlexey/SOM-VAE)
 
 
 Kind regards,
