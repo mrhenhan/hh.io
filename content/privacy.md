@@ -84,9 +84,7 @@ Some of our websites include content from third parties, such as videos from You
 ### Calendly
 
 This website uses Calendly.com for online appointment scheduling. Either you receive a link from us and use the software directly on the Calendly website, or we integrate it directly into our website via a script.
-By using the appointment service you automatically use the services of Calendly.com. There, data is transferred for security and documentation purposes. The data collected includes Name, IP address at the time of the appointment, agreed date and time. This data is not passed on to third parties and is only used for administration and organization of the appointments and for internal statistics. With the use of the appointment arrangement you agree that you are in agreement with it. You can find more information from Calendly.com here. Please be sure to read them. Please note that the site is only available in English: 
-
-[https://calendly.com/pages/privacy](https://calendly.com/pages/privacy)
+By using the appointment service you automatically use the services of Calendly.com. There, data is transferred for security and documentation purposes. The data collected includes Name, IP address at the time of the appointment, agreed date and time. This data is not passed on to third parties and is only used for administration and organization of the appointments and for internal statistics. With the use of the appointment arrangement you agree that you are in agreement with it. You can find more information from Calendly.com here. Please be sure to read them. Please note that the site is only available in English: [https://calendly.com/pages/privacy](https://calendly.com/pages/privacy)
 
 ### Commento
 
@@ -146,8 +144,3 @@ You have the right,
   - a supervisory authority in the Member State of its residence, place of work or place of alleged infringement. The following supervisory authority is responsible for us: The state commissioner for data protection and freedom of information Baden-Württemberg, https://www.baden-wuerttemberg.datenschutz.de/die-aufsichtsbehorden-der-lander/
   
 If you have questions or comments on data protection (for example, to provide information and update your personal data), please contact under the keyword "Privacy" contact under the following e-mail address datenschutz@bitExpert.de or by post (see Imprint) with us.
-
-
-
-
-
