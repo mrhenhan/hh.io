@@ -24,8 +24,11 @@ The following provisions are for your information about the processing of person
 Our data protection representative can be reached by email at **privacy@henrikhain.io** or by postal service
 
 Henrik Hain
+
 - Data Protection Representative -
+
 Rheinaustr. 11
+
 D-68163 Mannheim
 
 ## Scope of Application
@@ -73,7 +76,7 @@ Storage in log files is done to ensure the functionality of the website. In addi
 
 ## Webbeacons / Tracking Pixel
 
-**We do not use Webbeacons and we do not use Tracking Pixels
+**We do not use Webbeacons and we do not use Tracking Pixels**
 
 ## Content of External Providers
 
@@ -143,4 +146,4 @@ You have the right,
   - our data protection representative privacy@henrikhain.io or by postal service
   - a supervisory authority in the Member State of its residence, place of work or place of alleged infringement. The following supervisory authority is responsible for us: The state commissioner for data protection and freedom of information Baden-Württemberg, https://www.baden-wuerttemberg.datenschutz.de/die-aufsichtsbehorden-der-lander/
   
-If you have questions or comments on data protection (for example, to provide information and update your personal data), please contact under the keyword "Privacy" contact under the following e-mail address datenschutz@bitExpert.de or by post (see Imprint) with us.
+If you have questions or comments on data protection (for example, to provide information and update your personal data), please contact under the keyword "Privacy" contact under the following e-mail address privacy@henrikhain.io or via postal service with us.
