@@ -12,108 +12,108 @@ subtitle = ""
   icon = "r-project"
   icon_pack = "fab"
   name = "R"
-  description = "50%"
+  description = ""
   
 [[feature]]
   icon = "cogs"
   icon_pack = "fas"
   name = "ML"
-  description = "80%"
+  description = ""
   
 [[feature]]
   icon = "python"
   icon_pack = "fab"
   name = "Python"
-  description = "85%"
+  description = ""
   
 [[feature]]
   icon = "chart-line"
   icon_pack = "fas"
   name = "Analytics"
-  description = "75%" 
+  description = "" 
   
 [[feature]]
   icon = "dev"
   icon_pack = "fab"
   name = "dev"
-  description = "80%"
+  description = ""
   
 [[feature]]
   icon = "java"
   icon_pack = "fab"
   name = "java"
-  description = "65%"
+  description = ""
   
 [[feature]]
   icon = "docker"
   icon_pack = "fab"
   name = "docker"
-  description = "80%"
+  description = ""
   
 [[feature]]
   icon = "linux"
   icon_pack = "fab"
   name = "*nix"
-  description = "80%"
+  description = ""
   
 [[feature]]
   icon = "microsoft"
   icon_pack = "fab"
   name = "microsoft"
-  description = "60%"
+  description = ""
   
 [[feature]]
   icon = "git"
   icon_pack = "fab"
   name = "git"
-  description = "80%"
+  description = ""
   
 [[feature]]
   icon = "jenkins"
   icon_pack = "fab"
   name = "jenkins"
-  description = "70%"
+  description = ""
   
 [[feature]]
   icon = "atlassian"
   icon_pack = "fab"
   name = "Atlassian"
-  description = "70%"
+  description = ""
   
 [[feature]]
   icon = "js"
   icon_pack = "fab"
   name = "js"
-  description = "55%"
+  description = ""
   
 [[feature]]
   icon = "raspberry-pi"
   icon_pack = "fab"
   name = "raspberry-pi"
-  description = "75%"
+  description = ""
   
 [[feature]]
   icon = "researchgate"
   icon_pack = "ai"
   name = "researchgate"
-  description = "65%"
+  description = ""
   
 [[feature]]
   icon = "camera-retro"
   icon_pack = "fas"
   name = "Photography"
-  description = "25%"
+  description = ""
   
 [[feature]]
   icon = "bicycle"
   icon_pack = "fas"
   name = "bicycle"
-  description = "25%"
+  description = ""
   
 [[feature]]
   icon = "dog"
   icon_pack = "fas"
   name = "dog"
-  description = "25%"
+  description = ""
 
 +++
