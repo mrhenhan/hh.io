@@ -1,6 +1,6 @@
 ---
 title: Privacy Policy
-date: "2020-05-02T00:00:00+01:00"
+date: "2020-06-23T00:00:00+01:00"
 draft: false
 share: false
 commentable: false
@@ -23,13 +23,10 @@ The following provisions are for your information about the processing of person
 
 Our data protection representative can be reached by email at **privacy@henrikhain.io** or by postal service
 
-Henrik Hain
-
-- Data Protection Representative -
-
-Rheinaustr. 11
-
-D-68163 Mannheim
+Henrik Hain <br>
+_Data Protection Representative_ <br>
+Rheinaustr. 11 <br>
+D-68163 Mannheim <br>
 
 ## Scope of Application
 
