@@ -49,6 +49,19 @@ and some generative imputation mechanisms would be
 - [Denoising Autoencoders (DAE)](https://dl.acm.org/doi/10.1145/1390156.1390294)
 - [Methods based on generative adversarial networks (GAN) and DAE](https://www.cc.gatech.edu/~hays/7476/projects/Avery_Wenchen/)
 
-In this post we are reviewing a more recent novel generative approach from 2018 by Yoon et al. They use a customized generative adversarial network for missing data imputation called [GAIN](https://arxiv.org/abs/1806.02920) which outperforms MICE, MissForest, Matrix, Auto-encode, and EM by a rather large margin on serveral different datasets regarding area under the curve (AUROC), mean bias and mean square error (MSE) performance metrics. So, how does it work?
+In this post we are reviewing a more recent novel generative approach from 2018 by Yoon et al. They use a customized generative adversarial network for missing data imputation called [GAIN](https://arxiv.org/abs/1806.02920) which outperforms MICE, MissForest, Matrix, Auto-encoders, and EM by a rather large margin on serveral different datasets regarding the following performance metrics
+
+- Area under the curve (AUROC)
+- Mean bias
+- Mean square error (MSE).
 
 ## How does it work?
+
+GAIN is an imputation method based on, and generalizing, the well-known generative adversarial network GAN [Goodfellow et al.](https://arxiv.org/abs/1406.2661) and is able to operate successfully even when complete data is not available. The goal of the generator is to accurately impute missing data, while the discriminator's goal is to distinguish between observed and imputed components. This means that the discriminator is trained to minimize a classification loss function, while the generator tries to maximize the missclassification rate of the discriminator. GAIN adapts the standard GAN architecture by providing the discriminator with a so-called Hint matrix to ensure that the adversarial process optimizes the desired target.
+
+{{< figure src="./gain_architecture.png" title="The architecture of GAIN. Image: [GAIN: Missing Data Imputation using Generative Adversarial Nets](https://arxiv.org/abs/1806.02920)">}}
+
+
+Yoon et al.'s GAIN implementation is available from Github too. Have a look at it!
+
+- [GAIN](https://github.com/jsyoon0823/GAIN)
