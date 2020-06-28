@@ -69,3 +69,8 @@ Yoon et al.'s GAIN implementation is available from Github too. Have a look at i
 
 - [GAIN Iplementation](https://github.com/jsyoon0823/GAIN)
 - [GAIN Paper](https://arxiv.org/abs/1806.02920)
+
+
+Kind regards,
+
+Henrik Hain
