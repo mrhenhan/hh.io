@@ -10,7 +10,7 @@ categories: ["time series", "machine learning", "missing values"]
 date: 2020-06-22T19:07:31+02:00
 lastmod: 2020-06-22T19:07:31+02:00
 featured: false
-draft: true
+draft: false
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.

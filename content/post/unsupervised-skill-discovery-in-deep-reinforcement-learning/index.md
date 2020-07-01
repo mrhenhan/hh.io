@@ -27,6 +27,10 @@ image:
 #   Otherwise, set `projects = []`.
 projects: []
 ---
+{{% alert note %}}
+The mothership [All.In Data](https://www.all-in-data.de/de/kuenstliche-intelligenz/unsupervised-skill-discovery-in-deep-reinforcement-learning/) has republished this article on their blog June the 29th. Thank you :smile:
+{{% /alert %}}
+
 AI residents A. Sharma et al. from Google Research and Google Brain published an interesting approach addressing the complicated issue of specifying a well-designed task-specific reward function in an unsupervised manner in order to remedy the problems of manually labeling "goal" states or introducing porbably costly instrumentations, e.g. in form of sensors.
 
 Usually, an agent in a supervised reinforcement learning environment uses an extrensic reward function specifically designed to address a specific problem area. In contrast, in unsupervised reinforcement learning, an agent utilizes an intrinsic reward function, e.g. procedures mimicing behaviours like curiosity, 'to generate its own trainings signals for acquiring a probably broad set of task-agnostic behaviors' - [Sharma et al. 2020].
