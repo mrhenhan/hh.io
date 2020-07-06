@@ -10,7 +10,7 @@ categories: ["SciPy", "machine learning", "data science", "bayesian statistics"]
 date: 2020-07-06T17:52:42+02:00
 lastmod: 2020-07-06T17:52:42+02:00
 featured: false
-draft: true
+draft: false
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
