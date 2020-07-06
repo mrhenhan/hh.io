@@ -27,6 +27,10 @@ image:
 #   Otherwise, set `projects = []`.
 projects: []
 ---
+{{% alert note %}}
+[All.In Data](https://www.all-in-data.de/de/data-analytics/time-series-data-clustering-distance-measures/) has republished this article on their blog June the 29th. Thank you :smile:
+{{% /alert %}}
+
 Time series data is nearly everywhere and actually most data can be modeled in form of a time series. Typical representatives from the category time series data are stock quotation or tick data, medical data, e.g. EEG readings, or even data from machine state monitoring in form of logs.
 
 Often it is of great interest to identify time series of similar progression or behaviour, but this can prove to be an extremely challenging task. This is due to the fact that it is difficult to define the notion of _similarity_ on time series data that may be differently scaled or translated in both the contextual and behavioral attributes. For this reason, the concept of similarity, especially in the context of time series, is an important core subject of research.
