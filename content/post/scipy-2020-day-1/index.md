@@ -1,11 +1,11 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-title: "Scipy 2020 Day One"
+title: "SciPy 2020 Day One"
 subtitle: "Dabl(ling) with new Libraries and an Introduction to Baysian Data Science"
 summary: ""
 authors: ["mrhenhan"]
-tags: ["Scipy 2020", "machine learning", "dabl", "Bayesian statistics", "PyMC3", "data science"]
+tags: ["SciPy 2020", "machine learning", "dabl", "Bayesian statistics", "PyMC3", "data science"]
 categories: ["SciPy", "machine learning", "data science", "bayesian statistics"]
 date: 2020-07-06T17:52:42+02:00
 lastmod: 2020-07-06T17:52:42+02:00
