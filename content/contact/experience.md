@@ -18,11 +18,11 @@ date_format = "Jan 2006"
 #   Leave `date_end` empty if it's your current employer.
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 [[experience]]
-  title = "Data Scientist / Data Engineer"
-  company = "All.In Data GmbH"
-  company_url = "www.all-in-data.de"
+  title = "Senior Data Scientist / Data Engineer"
+  company = "bitExpert AG / formerly All.In Data GmbH"
+  company_url = "www.bitexpert.de"
   location = "Mannheim"
-  date_start = "2019-10-01"
+  date_start = "2020-09-01"
   date_end = ""
   description = """Development and engineering of AI and ML solutions, including intelligent data analysis in the fields of ecommerce, finance and insurance.
   
@@ -32,6 +32,27 @@ date_format = "Jan 2006"
   * Modelling
   * Engineering
   * Deploying
+  
+  of ML and AI centric applications.
+  """
+
+[[experience]]
+  title = "Data Scientist / Data Engineer"
+  company = "All.In Data GmbH"
+  company_url = "www.all-in-data.de"
+  location = "Mannheim"
+  date_start = "2019-10-01"
+  date_end = "2020-08-30"
+  description = """Development and engineering of AI and ML solutions, including intelligent data analysis in the fields of ecommerce, finance and insurance.
+  
+  
+  Responsibilities include:
+  * Analysing
+  * Modelling
+  * Engineering
+  * Deploying
+  
+  of ML and AI centric applications.
   """
 
 [[experience]]

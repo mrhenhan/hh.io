@@ -10,12 +10,12 @@ authors:
 superuser: true
 
 # Role/position
-role: Data Scientist / Data Engineer
+role: Senior Data Scientist / Data Engineer
 
 # Organizations/Affiliations
 organizations:
-- name: All.In Data GmbH
-  url: "https://www.all-in-data.de/de/"
+- name: bitExpert AG
+  url: "https://www.bitexpert.de/en_US/"
 
 # Short bio (displayed in user profile at end of posts)
 bio: My (research) interests evolve around the practical and theoretical aspects of software engineering, (self-) learning systems and algorithms, especially (deep) reinforcement learning, spatio-temporal event detection, and computer vision approaches.
@@ -71,7 +71,7 @@ social:
 #   link: files/cv.pdf
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
-email: "henrik.hain@all-in-data.de"
+email: "h.hain@bitexpert.de"
 
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
@@ -79,6 +79,6 @@ email: "henrik.hain@all-in-data.de"
 #- Researchers
 #- Visitors
 ---
-I am a data scientist and (data|software) engineer at [All.In Data GmbH](https://www.all-in-data.de/de/) located in beautiful [Mannheim, Germany](https://en.wikipedia.org/wiki/Mannheim). My work and research interests include (deep) reinforcement learning, machine learning, software engineering, and natural language processing where I successfully applied my expertise in academic research as well as in real-world business projects in finance, EPC project management, and large online retail. 
+I am a senior data scientist and (data|software) engineer at [bitExpert AG](https://www.bitexpert.de/en_US/) located in beautiful [Mannheim, Germany](https://en.wikipedia.org/wiki/Mannheim). My work and research interests include (deep) reinforcement learning, machine learning, software engineering, and natural language processing where I successfully applied my expertise in academic research as well as in real-world business projects in finance, EPC project management, and large online retail. 
 
-I have a preference for elegantly designed, efficient and minimal systems and do not like overengineered or oversized solutions, which is sometimes the reason for being admonished by my boss Florian for getting lost in details and tinkering too much.
+I have a preference for elegantly designed, efficient and minimal systems and do not like overengineered or oversized solutions.

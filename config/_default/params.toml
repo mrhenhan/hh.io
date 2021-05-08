@@ -81,23 +81,23 @@ edit_page = {repo_url = "https://github.com/mrhenhan/hh.io", content_dir = "cont
 ############################
 
 # Enter contact details (optional). To hide a field, clear it to "".
-email = "henrik.hain@all-in-data.de"
+email = "H.Hain@bitExpert.de"
 phone = "+49 1515 5462894"
 
 # Address
 # For country_code, use the 2-letter ISO code (see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 )
-address = {street = "Theodor-Heuss-Anlage 12", city = "Mannheim", region = "Baden-Wuerttemberg", postcode = "68165", country = "Germany", country_code = "DE"}
+address = {street = "Industriestraße 35", city = "Mannheim", region = "Baden-Wuerttemberg", postcode = "68169", country = "Germany", country_code = "DE"}
 
 # Geographic coordinates
 # To get your coordinates, right-click on Google Maps and choose "What's here?". The coords will show up at the bottom.
-coordinates = {latitude = "49.47736", longitude = "8.50318"}
+coordinates = {latitude = "49.51250", longitude = "8.46844"}
 
 # Directions for visitors to locate you.
-directions = "Enter Building, turn right and take the stairs to Regus entrance on Floor 2"
+directions = ""
 
 # Office hours
 # A list of your office hours. To remove, set to an empty list `[]`.
-office_hours = ["Monday 09:00 to 16:00", "Wednesday 10:00 to 18:00", "Friday 09:00 to 15:30"]
+office_hours = []
 
 # Enter an optional link for booking appointments (e.g. calendly.com).
 appointment_url = "https://calendly.com/henrikhain/30min"
@@ -208,7 +208,7 @@ plugins_js  = []
   #   0: Disabled
   #   1: Disqus (https://disqus.com)
   #   2: Commento (https://commento.io)
-  engine = 2
+  engine = 0
 
   # Which page types are commentable?
   commentable = {page = false, post = true, docs = false, project = false, publication = false, talk = true}
