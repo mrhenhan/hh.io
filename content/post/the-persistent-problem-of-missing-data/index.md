@@ -8,7 +8,7 @@ authors: [mrhenhan]
 tags: [missing data, missing value imputation, statistics, unsupervised learning, supervised learning]
 categories: [machine learning]
 date: 2021-05-07T18:00:05+02:00
-lastmod: 2021-05-07T18:00:05+02:00
+lastmod: 2021-05-09T14:00:05+02:00
 featured: false
 draft: false
 
@@ -91,13 +91,95 @@ probability of data points being missing is the same only within groups in the
 **observed** data. Thus the data is MCAR only within those groups and the
 probability of being missing varies between groups.
 
-If the missingness mechanism is not MCAR or MAR the missingness mechanism is
-called **missing not at random (MNAR)**. Essentially, this means that the
+If the missingness mechanism is neither MCAR nor MAR the missingness mechanism
+is called **missing not at random (MNAR)**. Essentially, this means that the
 probability of data points missing varies because of reasons we do not know.
 
-The reasons for missingness and the missingness mechanisms are necessary
+The reasons for missingness as well as the missingness mechanisms are necessary
 concepts for being able to reason about why some missing value imputation
 solutions may work for our distinct missing value problem and some do not.
 
-## A review on some missing value imputation solutions
+## A review on the problems of missing value imputation solutions
 
+Missing value imputaton is different from data synthesis or prediction due
+to the underlying missingness reasons and mechanisms. Most solutions, even more
+advanced regression and machine learning solutions, only hold, given that the
+underlying missingness mechanism MCAR is true, which is very often not the
+case.
+
+The problem with imputing predicted values is that they only yield realistic
+imputation, if the prediction is close to perfection but that would be like
+recreation of the missing data from the available data which naturally
+strengthens the relations between the variables and therefor will bias
+correlations upwards. Essentially the variability of the data is underestimated
+and the imputations are too good to be true according to van Buuren (2018).
+
+For example, in reality the data may be missing because they are outliers with
+weak relations to the remaining data. Imputing predited data would not estimate
+this weak relation and would result in false positives and spurios relations.
+
+## Solution approaches to the problems of missing value imputation
+
+As already mentioned, the goal of a missing value imputation solution is to
+stably impute missing values such that there is no bias introduced under any
+of the missingness mechanisms MCAR, MAR, and MNAR. Most simple approaches like
+listwise or pairwise deletion only hold within MCAR and reduce the available
+information considerably. Mean imputation strongly reduces variance in the data
+and results in to small standard error. Regression imputation may hold under
+MAR but strengthens the relation of the variables and essentially results in the
+standard error being too small. Last observation carried forward (LOCF),
+in case of time-to-event data, as well as first observation carried backward
+(FOCB) yields a too small standard error as well and they do not hold true
+under any missingness mechanism. The same is true for the indicator imputation
+solution.
+
+There are some interesting approaches addressing the above short-comings of
+ad-hoc solutions with **stochastic regression imputation** introducing the concept
+of drawing random noise from the regression residuals, essentially spoiling
+the best imputation. This may seem counter-intuitive at a first glance but
+prevents imputations from being too good to be true while preserving the
+correlation between the variables.
+
+Another promising approach is **multiple imputation**. Using multiple imputation
+one creates $m > 1$ complete data sets, where each data set is analyzed
+individually. The $m$ analysis results are then pooled into a final estimate
+including the standard error by some pooling rules. The imputed values
+are drawn from a distribution modeled individually for each missing entry, so
+that the $m$ data sets are complete but differ in the imputations only. The
+magnitude of differences between the imputations models the uncertainty we have
+about the missing values effectively.
+
+**Stochastic regression imputation** and **multible imputation** especially may
+be computational prohibitive in face of very large data sets and large
+proportions of missingness.
+
+An interesting approach would be to utilize the context a data set was created
+for and within to find correlated information for imputation thus reducing
+the amount of data needed as well as unnecessary noise with the help of 
+unsupervised contextual clustering, while preserving the statistical properties
+of the data set.
+
+## Conclusion
+
+Correct and stable missing value imputation is a challenging problem closely
+related to prediction and data synthesis approaches. Most of the content here
+was drawn from the excellent introduction to missing value imputation from
+[Steven van Buuren](https://stefvanbuuren.name) based on the groundbreaking
+work on missing value imputation by Donald B. Rubin.
+
+This article introduced the challenging problem of missing value impution
+and highlighted some of the difficulties facing missing data. Short-comings
+of ad-hoc missing value imputation solutions were addressed and some conceptual
+solution approaches were discussed.
+
+In the next article I will discuss **stochastic regression imputation**,
+**multiple imputation**, and recent **machine learning** based imputation
+approaches including there strengths and short-comings in greater detail.
+
+Kind regards,
+
+Henrik
+
+## References
+
+- [Flexible imputation of missing data 2018](https://stefvanbuuren.name/fimd/)
