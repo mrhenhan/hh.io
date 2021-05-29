@@ -30,4 +30,3 @@ There are serveral specific ways to increase the turnover in online retail busin
 $$Rate_{conversion}=\\frac{|Visitors_{buyers}|}{|Visitors|}$$
    
 with the complementary churn rate being $1-Rate_{conversion}$.
-
