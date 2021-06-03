@@ -37,19 +37,18 @@ The [JupyterLab source code](https://github.com/mrhenhan/stochastic-regression-i
 This blog post attempts to introduce the conceptual advantages of stochastic
 regression imputation, as mentioned in the last post 
 [The persistent problem of missing data]({{< relref "/post/the-persistent-problem-of-missing-data" >}}),
-using practical examples in Python. 
+with the help of practical examples written in Python. 
 
-Stochastic regression imputation is based on regression imputation in which
-imputations are generated based on a model estimated on the observed values.
-In regression imputation, the imputed are the most likely values under the
-particular model. This often amplifies the relations in the data in an
-undesirable way.
-
-The drawbacks of regression imputation, as well as related more recent methods
-from the area of machine learning, are dangerous as they may lead to imputations
+Deterministic regression imputation is an imputation method based on 
+(linear) regression. To estimate missing values a regression model is fitted
+to the observed part of the data and then the estimates of the model are used as
+imputations at the points where missing values occur. Deterministic
+regression imputation has multiple drawbacks. On the one hand, it strengthens
+the relationships in the data, and on the other hand, it does not take into
+account the uncertainty about missing data. Another disadvantage of 
+deterministic regression imputation, as well as related more recent methods
+from the area of machine learning, is that they may lead to imputations
 which seem to be perfect for the model generated from the observed data.
-However, these methods unfortunately amplify relationships in the data,
-artificially increasing correlations and underestimating variation.
 
 The basic idea behind stochastic regression imputation is to account for the
 inherent uncertainty about missing values by adding noise. This is a very
@@ -94,9 +93,9 @@ missing = df[~R]
 
 The following plot serves to get a feeling for the distribution of the missing
 values, which are missing here completely at random (MCAR).  The plot uses the
-Abayomi convention for colors (Abayomi et al., 2008), where blue stands for
+Abayomi convention for colors (Abayomi et al., 2008), where blue is for
 observed values, red for (real) missing values and black for the complete
-dataset with synthetical imputed values.
+dataset with imputed values.
 
 {{< icon name="python" pack="fab" >}} Python 
 
@@ -128,7 +127,7 @@ One can see that for the missing values simply the values of the regression
 model at the corresponding X position are used. This underestimates the variance
 of the data set and does not take into account the uncertainty about missing
 values. For stochastic regression imputation a random error or noise term
-$\epsilon$ is added to the regression imputation resulat at the position of the
+$\epsilon$ is added to the regression imputation result at the position of the
 missing value. The error term is drawn from the distribution of the residuals,
 here assuming the residuals are normally distributed, thus 
 $\dot{\epsilon} ~\sim N(0, \hat{\sigma}^2)$, with $\hat{\sigma}^2$ being
@@ -154,9 +153,12 @@ marked as red dots.
 
 {{< figure src="./compimp.png" title="Comparison of the original data to the imputations with regression and stochastic regression imputation. Reals missing values in red.">}}
 
-and the box-and-whiskers plot for all three completed data sets.
+The box-and-whiskers plot for all three completed data sets shows, that the
 
 {{< figure src="./compbox.png" title="Box-and-whiskers plot comparison of the original data distribution with the deterministic and stochastic imputation distributions.">}}
+
+distributions between the original data and both imputation methods do not
+deviate much from each other.
 
 ## Discussion
 
@@ -173,21 +175,20 @@ Secondly, and more interesting in the case of deterministic and stochastic
 regression imputation, a missingness model can only be trained on observed
 values. In case of deterministic regression imputation, missing values are
 imputed directly from the regression line, reducing the variance of the
-dataset in relation to the missing rate and not accounting for the uncertainty
-of missing values nor unseen data, which probably could results in a low
+dataset in relation to the missing rate not accounting for the uncertainty
+of missing values nor unseen data, which could result in low
 generalizability of the model. 
 
 In contrast, stochastic regression imputation accounts for the uncertainty
 w.r.t. missing values by adding a random error term from the regression model
-residual distribution and thus does not reduce variance or covariance of the
-data significantly. Imputations are more realistic and stochastic regression
-imputation is probably more generalizable, depending on the quality of the
-training data set the regression model was trained under.
+residual distribution and thus does not reduce variance or covariance 
+significantly. Imputations are more realistic and  more generalizable, depending
+on the quality of the training data set the regression model was trained under.
 
-But finally, it must be noted that, at least in the present simulated case, the
+Finally, it must be noted that, at least in the present simulated case, the
 mean absolute percentage (MAPE) and root mean squared error are higher
-in the case of stochastic regression imputation than in the case of
-deterministic regression imputation.
+for stochastic regression imputation than for deterministic regression
+imputation.
 
 $$
 MAPE(Y,\hat{Y}) = 100/N \sum_i^N{ \lvert \frac{Y_i - \hat{Y}_i}{Y_i} \rvert}
@@ -208,12 +209,13 @@ methods and $25$ % of missing values following the MCAR mechanism.
 ## Conclusion
 
 This blog post introduced stochastic regression imputation in comparison to
-normal or deterministic regression imputation together with some code examples
-in Python. It showed the conceptual benefits
-of stochastic regression imputation through spoiling the results by adding noise
-from the residual distribution. Furthermore, the dangers of
-blindly trusting the often all too perfect imputations of regression imputation
-and its modern incarnations from the area of machine learning were introduced.
+deterministic regression imputation together with some code examples
+in Python. Although this was not a formal investigation, it showed the
+conceptual benefits of stochastic regression imputation through spoiling the
+best estimation results by adding noise from the residual distribution.
+Furthermore, the dangers of blindly trusting the often all too perfect
+imputations of regression imputation and its modern incarnations from the area 
+of machine learning were introduced.
 
 In the next blog post multiple imputation will be introduced.
 
