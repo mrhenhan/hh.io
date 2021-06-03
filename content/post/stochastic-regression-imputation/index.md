@@ -7,8 +7,8 @@ summary: "Stochastic regression imputation can be considered a refinement of reg
 authors: [mrhenhan]
 tags: [missing data, missing value imputation, statistics, unsupervised learning, supervised learning, Python]
 categories: [machine learning]
-date: 2021-05-07T18:00:05+02:00
-lastmod: 2021-05-09T14:00:05+02:00
+date: 2021-05-07T18:00:05
+lastmod: 2021-06-03T15:43:05
 featured: false
 draft: false
 
@@ -28,10 +28,16 @@ image:
 projects: []
 ---
 
+{{% alert note %}}
+The [JupyterLab source code](https://github.com/mrhenhan/stochastic-regression-imputation) for this article is now available via [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mrhenhan/stochastic-regression-imputation/master?filepath=notebooks%2Fstochastic-regression-imputation.ipynb)
+{{% /alert %}}
+
 # An introduction to (stochastic) regression imputation
 
 This blog post attempts to introduce the conceptual advantages of stochastic
-regression imputation, as mentioned in the last post [The persistent problem of missing data]({{< relref "/post/the-persistent-problem-of-missing-data" >}}), using practical examples in Python 
+regression imputation, as mentioned in the last post 
+[The persistent problem of missing data]({{< relref "/post/the-persistent-problem-of-missing-data" >}}),
+using practical examples in Python. 
 
 Stochastic regression imputation is based on regression imputation in which
 imputations are generated based on a model estimated on the observed values.
@@ -69,12 +75,14 @@ df = df.drop("Month", axis=1)
 ```
 
 Next, a $0-1$ response indicator matrix (vector) $R$ is generated,
-denoting the positions of observed and missing values. The reponse idicator
-matrix masks $20\%$ of the dataset as missing.
+denoting the positions of observed and missing values. This response indicator
+matrix will mask $25$% of the dataset as missing.
+
+{{< icon name="python" pack="fab" >}} Python 
 
 ```python
-# Choose 20% of the index positions at random
-idx_miss = np.random.randint(0, high=len(df), size=int(len(df)*.2))
+# Choose 25% of the index positions at random
+idx_miss = np.random.randint(0, high=len(df), size=int(len(df)*.25))
 
 # Create response indicator matrix
 R = ~df.index.isin(idx_miss)
@@ -90,6 +98,8 @@ Abayomi convention for colors (Abayomi et al., 2008), where blue stands for
 observed values, red for (real) missing values and black for the complete
 dataset with synthetical imputed values.
 
+{{< icon name="python" pack="fab" >}} Python 
+
 ```python
 plt.figure(figsize=(16,6))
 sns.scatterplot(x=observed.index, y=observed["#Passengers"], color="blue")
@@ -103,6 +113,8 @@ The missing values seem to be evenly distributed across the data range.
 For regression imputation, the scikit-learn LinearRegression model is used.
 Finally the missing values are estimated using the model and the index positions
 from the missing data.
+
+{{< icon name="python" pack="fab" >}} Python 
 
 ```python
 lrg = LinearRegression()
@@ -122,6 +134,8 @@ here assuming the residuals are normally distributed, thus
 $\dot{\epsilon} ~\sim N(0, \hat{\sigma}^2)$, with $\hat{\sigma}^2$ being
 estimated from the residuals of the formerly fitted linear regression model.
 
+{{< icon name="python" pack="fab" >}} Python 
+
 ```python
 # Calculate residuals, variance and noise vector from residual distr.
 residuals = observed["#Passengers"].values - rgr.predict(observed.index.values.reshape(-1, 1))
@@ -136,17 +150,76 @@ simputations = imputations + rnoise
 
 Finally, the following image shows the original data plotted against both
 regression and stochastic regression imputation with the real missing values
-marked as red dots
+marked as red dots.
 
-{{< figure src="./comimp.png" title="Comparison of the original data to the imputations with regression and stochastic regression imputation. Reals missing values in red.">}}
+{{< figure src="./compimp.png" title="Comparison of the original data to the imputations with regression and stochastic regression imputation. Reals missing values in red.">}}
 
 and the box-and-whiskers plot for all three completed data sets.
 
-{{< figure src="./compbox.png" title="Comparison of the original data to the imputations with regression and stochastic regression imputation. Reals missing values in red.">}}
+{{< figure src="./compbox.png" title="Box-and-whiskers plot comparison of the original data distribution with the deterministic and stochastic imputation distributions.">}}
 
 ## Discussion
 
+How is it that stochastic regression imputation often gives more realistic
+results, although the best results are contaminated by noise or, at least
+apparently, outliers are imputed?
+
+In fact, several problem dimensions exist in imputing missing values. First,
+it is not possible to test missing value imputation methods on real data with
+missing values as, in fact, we don't know the missing values. Thus, a missing
+value imputation model can only be trained on simulation data, where missing
+values are simulated according the missingness distributions in the real data.
+Secondly, and more interesting in the case of deterministic and stochastic
+regression imputation, a missingness model can only be trained on observed
+values. In case of deterministic regression imputation, missing values are
+imputed directly from the regression line, reducing the variance of the
+dataset in relation to the missing rate and not accounting for the uncertainty
+of missing values nor unseen data, which probably could results in a low
+generalizability of the model. 
+
+In contrast, stochastic regression imputation accounts for the uncertainty
+w.r.t. missing values by adding a random error term from the regression model
+residual distribution and thus does not reduce variance or covariance of the
+data significantly. Imputations are more realistic and stochastic regression
+imputation is probably more generalizable, depending on the quality of the
+training data set the regression model was trained under.
+
+But finally, it must be noted that, at least in the present simulated case, the
+mean absolute percentage (MAPE) and root mean squared error are higher
+in the case of stochastic regression imputation than in the case of
+deterministic regression imputation.
+
+$$
+MAPE(Y,\hat{Y}) = 100/N \sum_i^N{ \lvert \frac{Y_i - \hat{Y}_i}{Y_i} \rvert}
+$$
+
+$$
+RMSE(Y,\hat{Y}) = \sqrt{\frac{\sum_i^N{(y_i - \hat{y_i})^2}}{N}}
+$$
+
+The following table contains the MAPE and RMSE results for both imputation
+methods and $25$ % of missing values following the MCAR mechanism.
+
+| Imputation method                   | RMSE    | MAPE     |
+| ----------------------------------- | ------- | -------- |
+| Deterministic regression imputation | $56.18$ | $12.6$ % |
+| Stochastic regression imputation    | $75.69$ | $21.4$ % |
+
 ## Conclusion
+
+This blog post introduced stochastic regression imputation in comparison to
+normal or deterministic regression imputation together with some code examples
+in Python. It showed the conceptual benefits
+of stochastic regression imputation through spoiling the results by adding noise
+from the residual distribution. Furthermore, the dangers of
+blindly trusting the often all too perfect imputations of regression imputation
+and its modern incarnations from the area of machine learning were introduced.
+
+In the next blog post multiple imputation will be introduced.
+
+Best regards,
+
+Henrik
 
 ## References
 

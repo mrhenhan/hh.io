@@ -164,14 +164,15 @@ pre code {
 
 
 <h1 class="title toc-ignore">Stochastic regression imputation</h1>
-<h4 class="date">2021-05-07T18:00:05+02:00</h4>
+<h4 class="date">2021-05-07T18:00:05</h4>
 
 </div>
 
 
+<p>{{% alert note %}} The <a href="https://github.com/mrhenhan/stochastic-regression-imputation">JupyterLab source code</a> for this article is now available via <a href="https://mybinder.org/v2/gh/mrhenhan/stochastic-regression-imputation/master?filepath=notebooks%2Fstochastic-regression-imputation.ipynb"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTA5IiBoZWlnaHQ9IjIwIj48bGluZWFyR3JhZGllbnQgaWQ9ImIiIHgyPSIwIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjYmJiIiBzdG9wLW9wYWNpdHk9Ii4xIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLW9wYWNpdHk9Ii4xIi8+PC9saW5lYXJHcmFkaWVudD48Y2xpcFBhdGggaWQ9ImEiPjxyZWN0IHdpZHRoPSIxMDkiIGhlaWdodD0iMjAiIHJ4PSIzIiBmaWxsPSIjZmZmIi8+PC9jbGlwUGF0aD48ZyBjbGlwLXBhdGg9InVybCgjYSkiPjxwYXRoIGZpbGw9IiM1NTUiIGQ9Ik0wIDBoNjR2MjBIMHoiLz48cGF0aCBmaWxsPSIjNTc5YWNhIiBkPSJNNjQgMGg0NXYyMEg2NHoiLz48cGF0aCBmaWxsPSJ1cmwoI2IpIiBkPSJNMCAwaDEwOXYyMEgweiIvPjwvZz48ZyBmaWxsPSIjZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iRGVqYVZ1IFNhbnMsVmVyZGFuYSxHZW5ldmEsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMTAiPjxpbWFnZSB4PSI1IiB5PSIzIiB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHhsaW5rOmhyZWY9ImRhdGE6aW1hZ2UvcG5nO2Jhc2U2NCxpVkJPUncwS0dnb0FBQUFOU1VoRVVnQUFBRmtBQUFCWkNBTUFBQUJpMVhpZEFBQUI4bEJNVkVYLy8vOVhtc3JtWllIMW9sSlhtc3Ixb2xKWG1zcm1aWUgxb2xKWG1zcjFvbEpYbXNybVpZSDFvbEwxb2xKWG1zcjFvbEpYbXNybVpZSDFvbEwxb2xKWG1zcm1aWUgxb2xKWG1zcjFvbEwxb2xKWG1zcm1aWUgxb2xMMW9sSlhtc3JtWllIMW9sTDFvbEwwbkZmMW9sSlhtc3JtWllIMW9sSlhtc3E4ZFpiMW9sSlhtc3JtWllIMW9sSlhtc3BYbXNwWG1zcjFvbEwxb2xKWG1zcm1aWUgxb2xKWG1zcjFvbEwxb2xKWG1zcm1aWUgxb2xMMW9sTGVhSVZYbXNybVpZSDFvbEwxb2xMMW9sSlhtc3JtWllIMW9sTG5hMzFYbXNyMW9sSlhtc3Ixb2xKWG1zcm1aWUgxb2xMcW9WcjFvbEpYbXNyMW9sSlhtc3JtWllIMW9sTDFvbEtrZmFQb2JYdnZpR2FiZ2FkWG1zcVRoS3VvZktIbVo0RG9ibnIxb2xKWG1zcjFvbEpYbXNwWG1zcjFvbEpYbXNyZlo0VHVoV24xb2xMMW9sSlhtc3FCaTdYMW9sSlhtc3BabXNsYm1NaGJtc2RlbXNWZmw4Wmdtc05pbThKcGs4RjBtN1I0bTdGNW5MQjZqYmg3amJpRGlyT0VpYk9HbkthTWhxK1BuYUNWZzZxV2c2cWVnS2FmZjZXaG5wS29mS0d0bm9teGVaeTNub0c2ZFppK24zdkNjcFBEY3BQR24zYkxiNC9NYjQ3VWJJclZhNHJZb0dqZGFJYmVhSVhob1dIbVpZSG9iWHZwY0hqcWRIWHJlSExyb1Zyc2ZHL3VoR251aDJid2oySHhrMTd5bDF2em1sanptMWowbmxYMW9sTDNBSlhXQUFBQWJYUlNUbE1BRUJBUUh4OGdJQ0F1TGpBd01EdzlQVUJBUUVwUVVGQlhWMWhnWUdCa2NIQndjWGw4Z0lDQWdvaUlrSkNRbEppY25KMmdvS0NtcUsrd3NMQzR1c0RBd01qUDBORFExTmJXM056ZzRPRGk1KzN2OFBEdzgvVDA5UFgyOXZiMzkvZjUrZnI3Ky96OC9QejkvdjcremN6Q3hnQUFCQzVKUkVGVWVBSE4xdWwzazBVVUJ2Q2IxQ1RWcG1wYWl0QUdTTFNwU3VLQ0xXcGJUS05KRkdsY1NNQUZGNjNpVW1SY2NORzZnTGJ1eGtYVTY2SkFVZWYvOUxTcG1YbnlMcjNUNUFPL3J6bDV6ajEzN3AxMzZCSVN5NDRmS0pYdUdOL2QxOVBVZlllTzY3Wm5xdGYyS0gzM0lkMXBzWG9GZFczMHNQWjFzTXZzMkQwNjBBSHF3czRGSGVKb2pMWnFudzUzY21mdmcrWFI4bUMwT0VqdXhyWEVrWDV5ZGVWSkxWSWxWMGUxMFBYazVrN2RZZUh1N0NqMWorNDl1S2c3dUxVNjF0R0x3MWxxMjd1Z1FZbGNsSEM0Ymd2N1ZRK1RBeWo1WmMvVWpzUHZzMXNkNWNXcnlXT2J0dldUMkVQYTRydG5XVzNKa3BqZ2dFcGJPc1ByN0Y3RXlOZXd0cEJJc2xBN3A0M0hDc253b29YVEVjM1VtUG1DTm41bHJxVEp4eTZuUm1jYXZHWlZ0LzNEYTJwRDVOSHZzT0hKQ3JkYzFHMnIzRElUcFU3eWljN3cvN1J4bmpjMGt0NUdDNGRqaXYyU3ozRmIyaUVaZzQxL2Rkc0ZEb3l1WXJJa21GZWh6MEhSMnRoUGdRcU15UVliMk90QjBXeHNaM0JlRzMrd3BSYjF2emwyVVlCb2c4RmZHaHR0RktqdEFjbG5aWXJSbzlyeUc5dUcvRlpRVTRBRWc4WkU5TGpHTXpUbXFLWFBMbmxXVm5JbFFRVHZ4SmY4aXA3VmdqWmp5VlByancxdGU1b3RNN1JtUDd4bStzSzJHdjlJOEdpKytCUmJFa1I5RUJ3OHpSVWNLeHdwNzN4a2FMaXFRYitrR2R1SlROSEc3MnpjVzlMb0pncVF4cFAzL1RqLy9jM3lCMHRxemFtbDA1LytvckhMa3NWTys5NWtYNy83cWdKdm5qbHJmcjJHZ3N5eDBlb3k5dVB6TjVTUGQ4NmFYZ2dPc0VLVzJQcno3ZHUzVklEMy90enMvc1NSczJ3N292VkhLdGpyWDJwZDdaTWxUeEFZZkJBTDlqaUR3ZkxrcTU1VG03aWZoTWxUR1B5Q0FzN1JGUmhuNDdKbmxjQjlSTTVUOTdBU3VaWEljVk51VURJbmRwRGJkc2ZycXNPcHBlWGw1WStYVktkakZDVGgrekdhVnVqMGQ5enkwNVBQSzNRekJhbXhkd3RUQ3J6eWcvMlJ2ZjJFc3RVam9yZEd3YS9reDltU0pMcjhtTEx0Q1c4SEhHSmMyUjVoUzIxOUlpRjZQblR1c09xY01sNTdnbTBaOGthbktNQVFnMHFTeXVaZm43ekl0c2JHeU85UWxueFkwZUN1RDFYTDJ5cy9Nc3JRaGx0RTdVZzB1Rk96dWZKRkUyUHhCby9ZQXg4WFBQZER3V04wTXJEUllJWkYwbVNNS0NOSGdhSVZGb0JiTm9MSjd0RVFES3hHRjBrY0xRaW1vakNab3B2ME9rTk95V0NDZzlYTVZBaTdBUkp6UWRNMlFVaDBnbUJvempjM1NrZzZkU0JScURHWVNVT3U2NlpnK0kyZk5acy9NMy9mL0dybC9YbnlGMUd3M1ZLQ2V6MFBONUlVZkZMcXZnVU40QzBxTnFZczVZaFBMK2FWWllERTRJcFVrNTdvU0ZuSm00RnlDcXFPRTBqaFkyU015TEZvbzU2enlvNmJlY09TNVVWRGRqN1ZpaDB6cCt0Y01od1JwQmVMeXF0SWpsSktBSVpTYkk4U0dTRjNrMHBBM21SNXRIdXdQRm9hN043cmVvcTJicUNzQWsxSHFDdTV1dkkxbjZKdVJYSStTMU1jbzU0WW1ZVHdjbjZBZWljK2tzc1hpOFhwWEM0VjN0Ny9BRHVUTkthUUpkU2NBQUFBQUVsRlRrU3VRbUNDIi8+IDx0ZXh0IHg9IjQxNSIgeT0iMTUwIiBmaWxsPSIjMDEwMTAxIiBmaWxsLW9wYWNpdHk9Ii4zIiB0cmFuc2Zvcm09InNjYWxlKC4xKSIgdGV4dExlbmd0aD0iMzcwIj5sYXVuY2g8L3RleHQ+PHRleHQgeD0iNDE1IiB5PSIxNDAiIHRyYW5zZm9ybT0ic2NhbGUoLjEpIiB0ZXh0TGVuZ3RoPSIzNzAiPmxhdW5jaDwvdGV4dD48dGV4dCB4PSI4NTUiIHk9IjE1MCIgZmlsbD0iIzAxMDEwMSIgZmlsbC1vcGFjaXR5PSIuMyIgdHJhbnNmb3JtPSJzY2FsZSguMSkiIHRleHRMZW5ndGg9IjM1MCI+YmluZGVyPC90ZXh0Pjx0ZXh0IHg9Ijg1NSIgeT0iMTQwIiB0cmFuc2Zvcm09InNjYWxlKC4xKSIgdGV4dExlbmd0aD0iMzUwIj5iaW5kZXI8L3RleHQ+PC9nPiA8L3N2Zz4=" alt="Binder" /></a> {{% /alert %}}</p>
 <div id="an-introduction-to-stochastic-regression-imputation" class="section level1">
 <h1>An introduction to (stochastic) regression imputation</h1>
-<p>This blog post attempts to introduce the, mentioned in the last post [The persistent problem of missing data]({{&lt; relref “/post/the-persistent-problem-of-missing-data” &gt;}}), conceptual advantages of stochastic regression imputation using practical examples in Python.</p>
+<p>This blog post attempts to introduce the conceptual advantages of stochastic regression imputation, as mentioned in the last post [The persistent problem of missing data]({{&lt; relref “/post/the-persistent-problem-of-missing-data” &gt;}}), using practical examples in Python.</p>
 <p>Stochastic regression imputation is based on regression imputation in which imputations are generated based on a model estimated on the observed values. In regression imputation, the imputed are the most likely values under the particular model. This often amplifies the relations in the data in an undesirable way.</p>
 <p>The drawbacks of regression imputation, as well as related more recent methods from the area of machine learning, are dangerous as they may lead to imputations which seem to be perfect for the model generated from the observed data. However, these methods unfortunately amplify relationships in the data, artificially increasing correlations and underestimating variation.</p>
 <p>The basic idea behind stochastic regression imputation is to account for the inherent uncertainty about missing values by adding noise. This is a very powerful concept, which also builds the basis of many modern missing value imputation approaches. In stochastic regression imputation, the noise is simulated by drawing random values from the residuals of the estimated regression model for each missing value and subsequently add them to the predicted missing value.</p>
@@ -182,9 +183,10 @@ pre code {
 <pre class="python"><code># Load airline passenger data set
 df = pd.read_csv(&quot;./AirPassengers.csv&quot;, sep=&quot;,&quot;, encoding=&quot;utf-8&quot;)
 df = df.drop(&quot;Month&quot;, axis=1)</code></pre>
-<p>Next, a <span class="math inline">\(0-1\)</span> response indicator matrix (vector) <span class="math inline">\(R\)</span> is generated, denoting the positions of observed and missing values. The reponse idicator matrix masks <span class="math inline">\(20\%\)</span> of the dataset as missing.</p>
-<pre class="python"><code># Choose 20% of the index positions at random
-idx_miss = np.random.randint(0, high=len(df), size=int(len(df)*.2))
+<p>Next, a <span class="math inline">\(0-1\)</span> response indicator matrix (vector) <span class="math inline">\(R\)</span> is generated, denoting the positions of observed and missing values. This response indicator matrix will mask <span class="math inline">\(25\)</span>% of the dataset as missing.</p>
+<p>{{&lt; icon name=“python” pack=“fab” &gt;}} Python</p>
+<pre class="python"><code># Choose 25% of the index positions at random
+idx_miss = np.random.randint(0, high=len(df), size=int(len(df)*.25))
 
 # Create response indicator matrix
 R = ~df.index.isin(idx_miss)
@@ -193,17 +195,20 @@ R = ~df.index.isin(idx_miss)
 observed = df[R]
 missing = df[~R]</code></pre>
 <p>The following plot serves to get a feeling for the distribution of the missing values, which are missing here completely at random (MCAR). The plot uses the Abayomi convention for colors (Abayomi et al., 2008), where blue stands for observed values, red for (real) missing values and black for the complete dataset with synthetical imputed values.</p>
+<p>{{&lt; icon name=“python” pack=“fab” &gt;}} Python</p>
 <pre class="python"><code>plt.figure(figsize=(16,6))
 sns.scatterplot(x=observed.index, y=observed[&quot;#Passengers&quot;], color=&quot;blue&quot;)
 sns.scatterplot(x=missing.index, y=missing[&quot;#Passengers&quot;], color=&quot;red&quot;)</code></pre>
 <p>{{&lt; figure src=“./observedVSmissing.png” title=“Observed versus missing monthly airline passenger values.”&gt;}}</p>
 <p>The missing values seem to be evenly distributed across the data range.</p>
 <p>For regression imputation, the scikit-learn LinearRegression model is used. Finally the missing values are estimated using the model and the index positions from the missing data.</p>
+<p>{{&lt; icon name=“python” pack=“fab” &gt;}} Python</p>
 <pre class="python"><code>lrg = LinearRegression()
 lrg.fit(observed.index.values.reshape(-1, 1), observed[&quot;#Passengers&quot;].values)
 imputations = lrg.predict(missing.index.values.reshape(-1, 1))</code></pre>
 <p>{{&lt; figure src=“./regimp.png” title=“Regression imputation with observed values in blue, real missing values in red and imputed values in black.”&gt;}}</p>
 <p>One can see that for the missing values simply the values of the regression model at the corresponding X position are used. This underestimates the variance of the data set and does not take into account the uncertainty about missing values. For stochastic regression imputation a random error or noise term <span class="math inline">\(\epsilon\)</span> is added to the regression imputation resulat at the position of the missing value. The error term is drawn from the distribution of the residuals, here assuming the residuals are normally distributed, thus <span class="math inline">\(\dot{\epsilon} ~\sim N(0, \hat{\sigma}^2)\)</span>, with <span class="math inline">\(\hat{\sigma}^2\)</span> being estimated from the residuals of the formerly fitted linear regression model.</p>
+<p>{{&lt; icon name=“python” pack=“fab” &gt;}} Python</p>
 <pre class="python"><code># Calculate residuals, variance and noise vector from residual distr.
 residuals = observed[&quot;#Passengers&quot;].values - rgr.predict(observed.index.values.reshape(-1, 1))
 variance = residuals.var()
@@ -212,16 +217,52 @@ rnoise = np.random.normal(0,np.sqrt(variance), len(imputations))
 # Add noise vector to predicton vector from regression model.
 simputations = imputations + rnoise</code></pre>
 <p>{{&lt; figure src=“./stochregimp.png” title=“Stochastic regression imputation with observed values in blue, real missing values in red and imputed values in black.”&gt;}}</p>
-<p>Finally, the following image shows the original data plotted against both regression and stochastic regression imputation with the real missing values marked as red dots</p>
-<p>{{&lt; figure src=“./comimp.png” title=“Comparison of the original data to the imputations with regression and stochastic regression imputation. Reals missing values in red.”&gt;}}</p>
+<p>Finally, the following image shows the original data plotted against both regression and stochastic regression imputation with the real missing values marked as red dots.</p>
+<p>{{&lt; figure src=“./compimp.png” title=“Comparison of the original data to the imputations with regression and stochastic regression imputation. Reals missing values in red.”&gt;}}</p>
 <p>and the box-and-whiskers plot for all three completed data sets.</p>
-<p>{{&lt; figure src=“./compbox.png” title=“Comparison of the original data to the imputations with regression and stochastic regression imputation. Reals missing values in red.”&gt;}}</p>
+<p>{{&lt; figure src=“./compbox.png” title=“Box-and-whiskers plot comparison of the original data distribution with the deterministic and stochastic imputation distributions.”&gt;}}</p>
 </div>
 <div id="discussion" class="section level2">
 <h2>Discussion</h2>
+<p>How is it that stochastic regression imputation often gives more realistic results, although the best results are contaminated by noise or, at least apparently, outliers are imputed?</p>
+<p>In fact, several problem dimensions exist in imputing missing values. First, it is not possible to test missing value imputation methods on real data with missing values as, in fact, we don’t know the missing values. Thus, a missing value imputation model can only be trained on simulation data, where missing values are simulated according the missingness distributions in the real data. Secondly, and more interesting in the case of deterministic and stochastic regression imputation, a missingness model can only be trained on observed values. In case of deterministic regression imputation, missing values are imputed directly from the regression line, reducing the variance of the dataset in relation to the missing rate and not accounting for the uncertainty of missing values nor unseen data, which probably could results in a low generalizability of the model.</p>
+<p>In contrast, stochastic regression imputation accounts for the uncertainty w.r.t. missing values by adding a random error term from the regression model residual distribution and thus does not reduce variance or covariance of the data significantly. Imputations are more realistic and stochastic regression imputation is probably more generalizable, depending on the quality of the training data set the regression model was trained under.</p>
+<p>But finally, it must be noted that, at least in the present simulated case, the mean absolute percentage (MAPE) and root mean squared error are higher in the case of stochastic regression imputation than in the case of deterministic regression imputation.</p>
+<p><span class="math display">\[
+MAPE(Y,\hat{Y}) = 100/N \sum_i^N{ \lvert \frac{Y_i - \hat{Y}_i}{Y_i} \rvert}
+\]</span></p>
+<p><span class="math display">\[
+RMSE(Y,\hat{Y}) = \sqrt{\frac{\sum_i^N{(y_i - \hat{y_i})^2}}{N}}
+\]</span></p>
+<p>The following table contains the MAPE and RMSE results for both imputation methods and <span class="math inline">\(25\)</span> % of missing values following the MCAR missingness mechanism.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Imputation method</th>
+<th>RMSE</th>
+<th>MAPE</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Stochastic regression imputation</td>
+<td><span class="math inline">\(56.18\)</span></td>
+<td><span class="math inline">\(12.6\)</span> %</td>
+</tr>
+<tr class="even">
+<td>Deterministic regression imputation</td>
+<td><span class="math inline">\(75.69\)</span></td>
+<td><span class="math inline">\(21.4\)</span> %</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="conclusion" class="section level2">
 <h2>Conclusion</h2>
+<p>This blog post introduced stochastic regression imputation in comparison to normal or deterministic regression imputation together with some code examples in Python. It showed the conceptual benefits of stochastic regression imputation through spoiling the results by adding noise from the residual distribution. Furthermore, the dangers of blindly trusting the often all too perfect imputations of regression imputation and its modern incarnations from the area of machine learning were introduced.</p>
+<p>In the next blog post multiple imputation will be introduced.</p>
+<p>Best regards,</p>
+<p>Henrik</p>
 </div>
 <div id="references" class="section level2">
 <h2>References</h2>
